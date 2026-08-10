@@ -1,363 +1,371 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Signal — Andrew Gillfillan</title>
-<meta name="description" content="A weekly newsletter conceived, designed and built solo in four weeks. 55.9% open rate and an 8.1% click rate across 30 original editions.">
-<meta name="author" content="Andrew Gillfillan">
-<meta name="theme-color" content="#14120F">
-<link rel="canonical" href="https://andrewgillfillan.com/the-signal.html">
-<meta property="og:url" content="https://andrewgillfillan.com/the-signal.html">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Andrew Gillfillan">
-<meta property="og:title" content="The Signal — Andrew Gillfillan">
-<meta property="og:description" content="A weekly newsletter conceived, designed and built solo in four weeks. 55.9% open rate and an 8.1% click rate across 30 original editions.">
-<meta property="og:image" content="https://andrewgillfillan.com/assets/andrew/headshot.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://andrewgillfillan.com/assets/andrew/headshot.png">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The Signal, Andrew Gillfillan</title>
+<meta content="A weekly news briefing for mid-Michigan: identified the opportunity, conceived the product, led a four-week launch, then wrote the system that lets a small newsroom sustain it." name="description"/>
+<meta content="#14120F" name="theme-color"/>
+<meta content="article" property="og:type"/>
+<meta content="Andrew Gillfillan" property="og:site_name"/>
+<meta content="The Signal, Andrew Gillfillan" property="og:title"/>
+<meta content="The product is not the launch. It is the system that keeps it moving." property="og:description"/>
+<meta content="https://www.andrewgillfillan.com/assets/cards/signal.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Archivo:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html{scroll-behavior:smooth}
+body{background:#fff;color:#14120F;font-family:Archivo,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none;transition:color .2s ease,background .2s ease,border-color .2s ease,opacity .2s ease}
+a{color:inherit;text-decoration:none;transition:color .2s ease,border-color .2s ease,opacity .2s ease}
 a:hover{color:#A32A19}
+nav::-webkit-scrollbar{display:none}
 ::selection{background:#14120F;color:#fff}
-a:focus-visible,button:focus-visible{outline:3px solid #A32A19;outline-offset:3px;border-radius:2px}
-/* tap targets */
-header nav{row-gap:0 !important}
-header nav a{display:inline-flex;align-items:center;min-height:26px;padding:6px 0}
-footer nav a{display:inline-flex;align-items:center;min-height:26px;padding:6px 0}
-[data-jumpbar] a{display:inline-flex;align-items:center;min-height:26px;padding:6px 0}
-.skip{position:absolute;left:-9999px;top:0;background:#14120F;color:#fff;padding:12px 18px;z-index:200;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-.skip:focus{left:8px;top:8px;color:#fff}
-@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
-@media (max-width:700px){
-  header{position:static !important}
-  header nav{font-size:11px !important;gap:6px 13px !important}
-}
+a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px solid #A32A19;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 </style>
-</helmet>
-
-<div style="background:#fff;color:#14120F;font-family:Archivo,Helvetica,Arial,sans-serif;min-height:100vh;overflow-x:clip">
-
-<a href="#main" class="skip">Skip to content</a>
-<header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,18,15,.14)">
-<div style="max-width:1600px;margin:0 auto;padding:11px clamp(16px,3.2vw,56px);min-height:62px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px clamp(14px,3vw,40px)">
-<a href="index.html" style="font-size:13px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap">Andrew Gillfillan</a>
-<nav aria-label="Main" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px clamp(14px,1.8vw,30px);font-size:12.5px;font-weight:500;letter-spacing:.075em;text-transform:uppercase;color:#5D564D">
-<a href="index.html" style="white-space:nowrap">Home</a>
-<a href="career.html" style="white-space:nowrap">Career</a>
-<a href="at-wkar.html" aria-current="page" style="color:#14120F;white-space:nowrap;border-bottom:2px solid #A32A19;padding-bottom:3px">At WKAR</a>
-<a href="point-of-view.html" style="white-space:nowrap">Point of View</a>
-<a href="about.html" style="white-space:nowrap">About</a>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1" name="robots"/>
+<meta content="Andrew Gillfillan, Andy Gillfillan, news director, editorial leader, newsroom leadership, audience strategy, public media, WKAR, Michigan State University, editorial products, newsletters, streaming news, digital audience growth" name="keywords"/>
+<link href="https://www.andrewgillfillan.com/the-signal.html" rel="canonical"/>
+<meta content="https://www.andrewgillfillan.com/the-signal.html" property="og:url"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Andrew (Andy) Gillfillan, news director and editorial leader" property="og:image:alt"/>
+<meta content="The Signal, Andrew Gillfillan" name="twitter:title"/>
+<meta content="A weekly news briefing for mid-Michigan: identified the opportunity, conceived the product, led a four-week launch, then wrote the system that lets a small newsroom sustain it." name="twitter:description"/>
+<meta content="https://www.andrewgillfillan.com/assets/cards/signal.jpg" name="twitter:image"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="site.webmanifest" rel="manifest"/>
+<style id="ag-production-styles">.ag-skip-link:focus{left:clamp(18px,3.4vw,64px)!important;top:11px!important}
+@media(max-width:700px){[data-section-nav]{position:static!important;top:auto!important;flex:1 1 100%!important;min-width:0!important;padding-top:32px!important}}
+.ag-hover-1:hover{color:#A32A19}
+.ag-hover-2:hover{color:#A32A19}
+.ag-hover-3:hover{color:#A32A19}
+.ag-hover-4:hover{color:#A32A19}
+.ag-hover-5:hover{color:#A32A19}
+.ag-hover-6:hover{color:#A32A19}
+.ag-hover-7:hover{color:#A32A19}
+.ag-hover-8:hover{color:#A32A19}
+.ag-hover-9:hover{color:#A32A19}
+.ag-hover-10:hover{color:#A32A19}
+.ag-hover-11:hover{color:#A32A19}
+.ag-hover-12:hover{color:#A32A19}
+.ag-hover-13:hover{color:#A32A19; border-bottom-color:#A32A19}
+.ag-hover-14:hover{color:#A32A19}
+.ag-hover-15:hover{color:#A32A19}
+.ag-hover-16:hover{color:#E0785F}
+.ag-hover-17:hover{color:#E0785F}
+.ag-hover-18:hover{color:#E0785F}
+.ag-hover-19:hover{color:#fff}
+.ag-hover-20:hover{color:#fff}
+.ag-hover-21:hover{color:#fff}
+.ag-hover-22:hover{color:#fff}
+.ag-hover-23:hover{color:#fff}
+.ag-hover-24:hover{color:#fff}
+.ag-hover-25:hover{color:#fff}
+.ag-hover-26:hover{color:#fff}
+.ag-hover-27:hover{color:#fff}
+.ag-hover-28:hover{color:#fff}
+.ag-hover-29:hover{color:#fff}
+.ag-hover-30:hover{color:#fff}
+.ag-after-1::after{content:''; position:absolute; right:0; top:1px; bottom:1px; width:clamp(0px,4vw,34px); pointer-events:none; background:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,.96))}</style></head>
+<body>
+<header style="position:sticky; top:0; z-index:800; background:rgba(255,255,255,.94); backdrop-filter:saturate(140%) blur(8px); -webkit-backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid rgba(20,18,15,.14);">
+<a class="ag-skip-link" href="#main" style="position:absolute; left:-9999px; top:0; background:#14120F; color:#fff; padding:10px 16px; font-size:12px; letter-spacing:.08em; text-transform:uppercase;">Skip to content</a>
+<div class="ag-after-1" style="position:relative; max-width:1600px; margin:0 auto; padding:0 clamp(18px,3.4vw,64px); display:flex; align-items:center; justify-content:space-between; gap:clamp(12px,2vw,24px); min-height:62px;">
+<a href="index.html" style="font-family:'Instrument Serif',Georgia,serif; font-size:clamp(17px,4.3vw,23px); letter-spacing:-.01em; line-height:1; white-space:nowrap; flex:0 0 auto;">Andrew Gillfillan</a>
+<nav aria-label="Primary" style="display:flex; align-items:center; gap:clamp(11px,1.9vw,30px); overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; font-size:11.5px; font-weight:500; letter-spacing:.1em; text-transform:uppercase;">
+<a class="ag-hover-1" href="index.html" style="white-space:nowrap; padding:8px 0; border-bottom:2px solid transparent; color:#5D564D;">Home</a>
+<a class="ag-hover-2" href="work.html" style="white-space:nowrap; padding:8px 0; border-bottom:2px solid #A32A19; color:#14120F; font-weight:600;">Work</a>
+<a class="ag-hover-3" href="at-wkar.html" style="white-space:nowrap; padding:8px 0; border-bottom:2px solid transparent; color:#5D564D;">At WKAR</a>
+<a class="ag-hover-4" href="career.html" style="white-space:nowrap; padding:8px 0; border-bottom:2px solid transparent; color:#5D564D;">Career</a>
+<a class="ag-hover-5" href="point-of-view.html" style="white-space:nowrap; padding:8px 0; border-bottom:2px solid transparent; color:#5D564D;">Point of view</a>
+<a class="ag-hover-6" href="about.html" style="white-space:nowrap; padding:8px 0; border-bottom:2px solid transparent; color:#5D564D;">About</a>
 </nav>
 </div>
 </header>
-
 <main id="main">
-<section style="max-width:1600px;margin:0 auto;padding:clamp(20px,2.8vw,40px) clamp(16px,3.2vw,56px) 0">
-<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding-bottom:14px;border-bottom:1px solid rgba(20,18,15,.14);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#5D564D">
-<span>Case study 01</span>
-<span>Newsletter · Product · Editorial systems</span>
-<span>WKAR News · Launched February 2026</span>
+<section style="max-width:1600px; margin:0 auto; padding:clamp(13px,1.5vw,20px) clamp(18px,3.4vw,64px) 0;">
+<div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 28px; padding-bottom:14px; border-bottom:1px solid rgba(20,18,15,.14); font-size:11.5px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#5D564D;">
+<span>Case study 01</span><span>Newsletter · Product · Editorial systems</span><span>WKAR News · launched February 2026</span>
 </div>
-
-<div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4.4vw,76px);padding:clamp(34px,5vw,74px) 0 clamp(30px,3.6vw,54px)">
-<div style="flex:3 1 460px;min-width:0">
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">Conceived · Designed · Built · Systematized</p>
-<h1 style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(52px,7.4vw,118px);line-height:.94;letter-spacing:-.022em;margin:clamp(16px,1.8vw,26px) 0 0">The Signal</h1>
-<p style="margin:clamp(22px,2.6vw,34px) 0 0;max-width:56ch;font-size:clamp(16.5px,1.08vw,19px);line-height:1.62;color:#39332C;text-wrap:pretty">A weekly news briefing for mid-Michigan, launched in February 2026 and sent every Sunday morning since. It was my idea. I designed the identity, built the original product solo in four weeks, and wrote the contribution systems and module structure that let a small newsroom produce it every week without me touching it.</p>
-<p style="margin:20px 0 0;max-width:56ch;font-size:clamp(16.5px,1.08vw,19px);line-height:1.62;color:#39332C;text-wrap:pretty">Every edition is built around named journalists: their beats, their voices, their faces. That is not decoration. It is the reason people open it.</p>
+<div style="display:flex; flex-wrap:wrap; gap:clamp(30px,4.4vw,80px); padding:clamp(34px,4.6vw,76px) 0 clamp(28px,3.4vw,52px);">
+<div style="flex:3 1 480px; min-width:0;">
+<p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">Conceived · Structured · Launched · Systematized</p>
+<h1 style="margin:clamp(16px,1.9vw,28px) 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(46px,6.6vw,110px); line-height:.95; letter-spacing:-.024em; text-wrap:balance;">The week ahead, not the week behind.</h1>
+<p style="margin:clamp(22px,2.6vw,36px) 0 0; max-width:56ch; font-size:clamp(16.5px,1.12vw,19.5px); line-height:1.62; color:#39332C; text-wrap:pretty;">The Signal is a weekly briefing for mid-Michigan, launched in February 2026 and sent every Sunday morning since. I identified the audience opportunity, conceived the product, shaped its identity and editorial architecture, and led a four-week launch. Then I wrote the contribution model and module system that let a small newsroom produce it consistently, and extend it into The Signal+ that July.</p>
+<p style="margin:18px 0 0; max-width:56ch; font-size:16px; line-height:1.62; color:#5D564D; text-wrap:pretty;">Every edition is built around named journalists: their beats, their voices, their faces. That is not decoration. It is the reason people open it.</p>
 </div>
-<div style="flex:2 1 300px;min-width:0;display:flex;align-items:flex-end">
-<div style="width:100%;border:1px solid rgba(20,18,15,.14)">
-<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:rgba(20,18,15,.14)">
-<div style="background:#fff;padding:clamp(18px,2vw,34px);display:flex;align-items:center;justify-content:center;aspect-ratio:5/3;min-width:0;min-height:0;overflow:hidden"><img src="assets/brand/signal-color.png" alt="The Signal logo" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain" /></div>
-<div style="background:#fff;padding:clamp(18px,2vw,34px);display:flex;align-items:center;justify-content:center;aspect-ratio:5/3;min-width:0;min-height:0;overflow:hidden"><img src="assets/brand/signal-plus-color.png" alt="The Signal+ logo" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain" /></div>
+<div style="flex:2 1 300px; min-width:0; display:flex; flex-direction:column; justify-content:flex-end; gap:16px;">
+<div style="display:grid; grid-template-columns:1fr 1fr; align-items:center; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);">
+<div style="display:flex; align-items:center; justify-content:center; padding:clamp(26px,3.2vw,44px) clamp(14px,1.8vw,26px); border-right:1px solid rgba(20,18,15,.12);">
+<img alt="The Signal wordmark and broadcast-signal mark" decoding="async" loading="lazy" src="assets/brand/signal-color.png" style="width:100%; max-width:180px; height:auto; object-fit:contain;"/>
 </div>
-<p style="margin:0;padding:clamp(18px,1.8vw,24px);border-top:1px solid rgba(20,18,15,.14);font-size:14.5px;line-height:1.6;color:#39332C">Identity designed in-house by Andrew. The Signal wordmark and broadcast-signal mark, plus a Signal+ lockup for the midweek edition.</p>
+<div style="display:flex; align-items:center; justify-content:center; padding:clamp(26px,3.2vw,44px) clamp(14px,1.8vw,26px);">
+<img alt="The Signal+ lockup" decoding="async" loading="lazy" src="assets/brand/signal-plus-color.png" style="width:100%; max-width:180px; height:auto; object-fit:contain;"/>
 </div>
+</div>
+<p style="margin:0; font-size:11px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:#7B7368; line-height:1.7;">In-house identity, built at WKAR. The Signal, February 2026. The Signal+, July 2026.</p>
 </div>
 </div>
 </section>
-
-<section style="border-top:1px solid rgba(20,18,15,.14);border-bottom:1px solid rgba(20,18,15,.14);background:#F7F5F1">
-<div style="max-width:1600px;margin:0 auto;padding:clamp(34px,4vw,60px) clamp(16px,3.2vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(24px,3vw,52px)">
+<section data-reveal="" style="border-top:1px solid rgba(20,18,15,.14); border-bottom:1px solid rgba(20,18,15,.14); background:#F7F5F1;">
+<div style="max-width:1600px; margin:0 auto; padding:0 clamp(18px,3.4vw,64px); display:flex; flex-wrap:wrap;">
+<div style="flex:1 1 200px; min-width:0; padding:clamp(26px,3vw,44px) clamp(18px,2.2vw,36px) clamp(26px,3vw,44px) 0; border-right:1px solid rgba(20,18,15,.14);">
+<p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(38px,4.2vw,64px); line-height:.88; letter-spacing:-.022em;">55.9%</p>
+<p style="margin:13px 0 0; font-size:14px; line-height:1.5; color:#39332C;">Open rate across 30 original editions</p>
+<p style="margin:8px 0 0; font-size:10.5px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">≈ 1.8× the media-publisher median</p>
+</div>
+<div style="flex:1 1 200px; min-width:0; padding:clamp(26px,3vw,44px) clamp(18px,2.2vw,36px); border-right:1px solid rgba(20,18,15,.14);">
+<p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(38px,4.2vw,64px); line-height:.88; letter-spacing:-.022em; color:#A32A19;">8.1%</p>
+<p style="margin:13px 0 0; font-size:14px; line-height:1.5; color:#39332C;">Click rate, the number Apple’s privacy changes cannot inflate</p>
+<p style="margin:8px 0 0; font-size:10.5px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">≈ 7× the media-publisher median</p>
+</div>
+<div style="flex:1 1 200px; min-width:0; padding:clamp(26px,3vw,44px) clamp(18px,2.2vw,36px); border-right:1px solid rgba(20,18,15,.14);">
+<p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(38px,4.2vw,64px); line-height:.88; letter-spacing:-.022em;">14.5%</p>
+<p style="margin:13px 0 0; font-size:14px; line-height:1.5; color:#39332C;">Clicks per unique open, the cleanest comparison available</p>
+<p style="margin:8px 0 0; font-size:10.5px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">≈ 3.8× the media-publisher median</p>
+</div>
+<div style="flex:1 1 200px; min-width:0; padding:clamp(26px,3vw,44px) 0 clamp(26px,3vw,44px) clamp(18px,2.2vw,36px);">
+<p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(38px,4.2vw,64px); line-height:.88; letter-spacing:-.022em;">+29.9%</p>
+<p style="margin:13px 0 0; font-size:14px; line-height:1.5; color:#39332C;">List growth, 1,288 at launch to 1,673 on August 9</p>
+<p style="margin:8px 0 0; font-size:10.5px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Unsubscribes averaged 0.21%</p>
+</div>
+</div>
+</section>
+<div style="max-width:1600px; margin:0 auto; padding:0 clamp(18px,3.4vw,64px); display:flex; flex-wrap:wrap; gap:clamp(28px,3.6vw,68px);">
+<nav aria-label="On this page" data-section-nav="" style="flex:0 1 176px; min-width:150px; position:sticky; top:78px; align-self:flex-start; padding-top:clamp(46px,5.6vw,92px); display:flex; flex-direction:column; font-size:11.5px; font-weight:500; letter-spacing:.06em;">
+<a class="ag-hover-7" href="#opportunity" style="padding:9px 0 9px 14px; border-left:2px solid rgba(20,18,15,.16); color:#5D564D;">The opportunity</a>
+<a class="ag-hover-8" href="#edition" style="padding:9px 0 9px 14px; border-left:2px solid rgba(20,18,15,.16); color:#5D564D;">The edition</a>
+<a class="ag-hover-9" href="#performance" style="padding:9px 0 9px 14px; border-left:2px solid rgba(20,18,15,.16); color:#5D564D;">Performance</a>
+<a class="ag-hover-10" href="#system" style="padding:9px 0 9px 14px; border-left:2px solid rgba(20,18,15,.16); color:#5D564D;">The system</a>
+<a class="ag-hover-11" href="#plus" style="padding:9px 0 9px 14px; border-left:2px solid rgba(20,18,15,.16); color:#5D564D;">The Signal+</a>
+<a class="ag-hover-12" href="#distribution" style="padding:9px 0 9px 14px; border-left:2px solid rgba(20,18,15,.16); color:#5D564D;">Distribution</a>
+</nav>
+<div style="flex:1 1 620px; min-width:0;">
+<section id="opportunity" style="padding-top:clamp(46px,5.6vw,92px);">
+<div data-reveal="" style="border-bottom:1px solid #14120F; padding-bottom:16px;">
+<p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">The opportunity</p>
+<h2 style="margin:12px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(30px,3.4vw,52px); line-height:1.04; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">No single place to find out what the week ahead looks like.</h2>
+</div>
+<div data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)); gap:clamp(22px,2.4vw,40px); padding-top:clamp(24px,2.8vw,40px);">
+<div style="border-top:2px solid #14120F; padding-top:15px;">
+<p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">01 · Conceived</p>
+<p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">The idea was mine: a Sunday briefing that told mid-Michigan what its week would look like.</p>
+</div>
+<div style="border-top:2px solid #14120F; padding-top:15px;">
+<p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">02 · Structured</p>
+<p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">I defined the identity, voice, module system and repeatable editorial cadence.</p>
+</div>
+<div style="border-top:2px solid #14120F; padding-top:15px;">
+<p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">03 · Launched</p>
+<p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">The first edition shipped four weeks after the decision to proceed, with no additional headcount.</p>
+</div>
+<div style="border-top:2px solid #14120F; padding-top:15px;">
+<p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">04 · Systematized</p>
+<p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">I wrote <em>Producing The Signal 101</em>, the operating manual the newsroom runs on.</p>
+</div>
+</div>
+</section>
+<section id="edition" style="padding-top:clamp(46px,5.6vw,88px);">
+<div data-reveal="" style="border-bottom:1px solid #14120F; padding-bottom:16px;">
+<p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">The edition · Sunday, August 9, 2026</p>
+<h2 style="margin:12px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(30px,3.4vw,52px); line-height:1.04; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">Seven named journalists in one edition.</h2>
+</div>
+<p data-reveal="" style="margin:clamp(20px,2.4vw,32px) 0 0; max-width:64ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">Politics, arts, classical, education, and a reporter sent to a town unannounced to see what she finds. That breadth is the product, and it draws on the whole WKAR operation, not just the newsroom. Every module carries a byline, a headshot, a beat and a reason to click. Nothing below is recreated or mocked up. These are captures of the edition as sent.</p>
+<figure data-lightbox="The Signal masthead, Sunday, August 9, 2026" data-reveal="" style="margin:clamp(24px,2.8vw,42px) 0 0;">
+<img alt="The Signal masthead and Good Morning section, August 9, 2026" decoding="async" loading="lazy" src="assets/signal/v2-top.jpg" style="width:100%; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:11px; font-size:11px; font-weight:500; letter-spacing:.06em; text-transform:uppercase; color:#7B7368;">Masthead · Good morning · Your Sunday signals</figcaption>
+</figure>
+<div data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:clamp(18px,2vw,30px); margin-top:clamp(20px,2.2vw,32px);">
+<figure data-lightbox="What Roth’s Watching · Andrew Roth · politics" style="margin:0;">
+<img alt="The What Roth’s Watching module by Andrew Roth" decoding="async" loading="lazy" src="assets/signal/v2-roth.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">What Roth’s Watching · Politics</figcaption>
+</figure>
+<figure data-lightbox="Melorie’s Tracking · Melorie Begay · public meetings" style="margin:0;">
+<img alt="The Melorie’s Tracking module by Melorie Begay" decoding="async" loading="lazy" src="assets/signal/v2-melorie.png" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Melorie’s Tracking · Public meetings</figcaption>
+</figure>
+<figure data-lightbox="Getting Lost with Emma J · Emma J Nelson" style="margin:0;">
+<img alt="The Getting Lost with Emma J module by Emma J Nelson" decoding="async" loading="lazy" src="assets/signal/v2-emmaj.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Getting Lost with Emma J · Features</figcaption>
+</figure>
+<figure data-lightbox="Public Media Matters · Sophia Saliby" style="margin:0;">
+<img alt="The Public Media Matters module by Sophia Saliby" decoding="async" loading="lazy" src="assets/signal/v2-sophia.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Public Media Matters · Sophia Saliby</figcaption>
+</figure>
+<figure data-lightbox="In-Depth, long-form reporting inside the briefing" style="margin:0;">
+<img alt="The In-Depth module in The Signal" decoding="async" loading="lazy" src="assets/signal/v2-indepth.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">In-Depth · Long-form reporting</figcaption>
+</figure>
+<figure data-lightbox="WKAR Education · Robin Pizzo" style="margin:0;">
+<img alt="The WKAR Education module by Robin Pizzo" decoding="async" loading="lazy" src="assets/signal/v2-education.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">WKAR Education · Robin Pizzo</figcaption>
+</figure>
+</div>
+<p data-reveal="" style="margin:clamp(20px,2.2vw,30px) 0 0; max-width:62ch; font-size:15.5px; line-height:1.62; color:#5D564D; text-wrap:pretty;">That breadth is what a small organization can actually sustain, but only when the system is written down.</p>
+</section>
+<section id="performance" style="padding-top:clamp(46px,5.6vw,88px);">
+<div data-reveal="" style="border-bottom:1px solid #14120F; padding-bottom:16px;">
+<p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">Performance</p>
+<h2 style="margin:12px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(30px,3.4vw,52px); line-height:1.04; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">The clicks are the story.</h2>
+</div>
+<p data-reveal="" style="margin:clamp(20px,2.4vw,32px) 0 0; max-width:64ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">Open rates industry-wide are inflated by Apple Mail Privacy Protection. Clicks are not. So the click and click-to-open numbers are the ones I lead with, and they are where The Signal separates most.</p>
+<div data-reveal="" style="margin-top:clamp(26px,3vw,44px); border:1px solid rgba(20,18,15,.14); padding:clamp(22px,2.6vw,38px);">
+<div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 20px; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#14120F;">
+<span>The Signal vs. the media-publisher median</span><span style="color:#7B7368; font-weight:500;">Omeda, H1 2026 · 1.95 billion sends</span>
+</div>
+<div style="display:flex; flex-direction:column; gap:clamp(16px,1.8vw,26px); margin-top:clamp(20px,2.2vw,30px);">
 <div>
-<p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">01 · Conceived</p>
-<p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#39332C">The idea was mine: a Sunday briefing that told mid-Michigan what its week would look like.</p>
+<p style="margin:0; font-size:11.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#5D564D;">Open rate</p>
+<div style="display:flex; align-items:center; gap:12px; margin-top:8px;"><div data-bar="55.9" data-bar-max="60" style="height:22px; background:#14120F; width:0;"></div><span style="font-size:14px; font-weight:600;">55.9%</span></div>
+<div style="display:flex; align-items:center; gap:12px; margin-top:6px;"><div data-bar="31.6" data-bar-max="60" style="height:22px; background:#C9C2B8; width:0;"></div><span style="font-size:14px; color:#7B7368;">31.6%</span></div>
 </div>
 <div>
-<p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">02 · Designed</p>
-<p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#39332C">Logo, type, color and module system, drawn and built by me, not commissioned.</p>
+<p style="margin:0; font-size:11.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#5D564D;">Click rate</p>
+<div style="display:flex; align-items:center; gap:12px; margin-top:8px;"><div data-bar="8.1" data-bar-max="16" style="height:22px; background:#A32A19; width:0;"></div><span style="font-size:14px; font-weight:600; color:#A32A19;">8.1%</span></div>
+<div style="display:flex; align-items:center; gap:12px; margin-top:6px;"><div data-bar="1.16" data-bar-max="16" style="height:22px; background:#C9C2B8; width:0;"></div><span style="font-size:14px; color:#7B7368;">1.16%</span></div>
 </div>
 <div>
-<p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">03 · Built solo</p>
-<p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#39332C">Original product shipped in four weeks, start to first send in February 2026, with no additional headcount.</p>
+<p style="margin:0; font-size:11.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#5D564D;">Click-to-open</p>
+<div style="display:flex; align-items:center; gap:12px; margin-top:8px;"><div data-bar="14.5" data-bar-max="16" style="height:22px; background:#14120F; width:0;"></div><span style="font-size:14px; font-weight:600;">14.5%</span></div>
+<div style="display:flex; align-items:center; gap:12px; margin-top:6px;"><div data-bar="3.8" data-bar-max="16" style="height:22px; background:#C9C2B8; width:0;"></div><span style="font-size:14px; color:#7B7368;">3.8%</span></div>
 </div>
-<div>
-<p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">04 · Systematized</p>
-<p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#39332C">I wrote <em>Producing The Signal 101</em>, the operating manual the newsroom runs on.</p>
 </div>
+<div style="display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:clamp(18px,2vw,26px); padding-top:14px; border-top:1px solid rgba(20,18,15,.12); font-size:11px; font-weight:500; letter-spacing:.05em; color:#5D564D;">
+<span style="display:flex; align-items:center; gap:8px;"><span style="width:16px; height:10px; background:#14120F;"></span>The Signal</span>
+<span style="display:flex; align-items:center; gap:8px;"><span style="width:16px; height:10px; background:#C9C2B8;"></span>Omeda media median, H1 2026</span>
+</div>
+</div>
+<div data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:clamp(20px,2.2vw,36px); margin-top:clamp(26px,3vw,42px);">
+<div><p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(34px,3.4vw,50px); line-height:.9;">30</p><p style="margin:10px 0 0; font-size:13.5px; color:#5D564D; letter-spacing:.05em; text-transform:uppercase; font-weight:500;">Original editions</p></div>
+<div><p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(34px,3.4vw,50px); line-height:.9;">49,053</p><p style="margin:10px 0 0; font-size:13.5px; color:#5D564D; letter-spacing:.05em; text-transform:uppercase; font-weight:500;">Emails sent</p></div>
+<div><p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(34px,3.4vw,50px); line-height:.9;">27,367</p><p style="margin:10px 0 0; font-size:13.5px; color:#5D564D; letter-spacing:.05em; text-transform:uppercase; font-weight:500;">Opens</p></div>
+<div><p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(34px,3.4vw,50px); line-height:.9;">99.9%</p><p style="margin:10px 0 0; font-size:13.5px; color:#5D564D; letter-spacing:.05em; text-transform:uppercase; font-weight:500;">Delivery rate</p></div>
+</div>
+<p data-reveal="" style="margin:clamp(18px,2vw,26px) 0 0; max-width:74ch; font-size:12px; line-height:1.7; color:#7B7368; text-wrap:pretty;">Aggregate results across 30 original editions: 28 Sunday editions plus the first two Signal+ editions, February 1 to August 9, 2026, Mailchimp bot-filtered. Benchmarks: Omeda Newsletter Benchmark Report for Media, H1 2026, showing 31.6% open, 1.16% click and 3.8% click-to-open medians across 1.95 billion sends. No credible public-media-specific newsletter benchmark exists, so no such comparison is made here.</p>
+</section>
+<section id="system" style="padding-top:clamp(46px,5.6vw,88px);">
+<div data-reveal="" style="border-bottom:1px solid #14120F; padding-bottom:16px;">
+<p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">The system behind it</p>
+<h2 style="margin:12px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(30px,3.4vw,52px); line-height:1.04; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">Producing The Signal 101</h2>
+</div>
+<p data-reveal="" style="margin:clamp(20px,2.4vw,32px) 0 0; max-width:62ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">I wrote the operating manual: who contributes what, when it is due, how a module is structured, how the voice works, and how the edition gets assembled and sent. The goal was a product the team could sustain through vacations, staffing changes and difficult weeks.</p>
+<div data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:clamp(22px,2.4vw,40px); margin-top:clamp(24px,2.8vw,40px);">
+<div style="border-top:1px solid rgba(20,18,15,.14); padding-top:15px;"><p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">Contribution model</p><p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">Named module owners, standing deadlines, one assembler on rotation.</p></div>
+<div style="border-top:1px solid rgba(20,18,15,.14); padding-top:15px;"><p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">Module structure</p><p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">Every unit carries a byline, a headshot, a beat and a reason to click.</p></div>
+<div style="border-top:1px solid rgba(20,18,15,.14); padding-top:15px;"><p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">Freelance layer</p><p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">A contribution model that helped protect reporting capacity after federal funding cuts.</p></div>
+<div style="border-top:1px solid rgba(20,18,15,.14); padding-top:15px;"><p style="margin:0; font-size:11px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:#A32A19;">Cadence</p><p style="margin:11px 0 0; font-size:15px; line-height:1.56; color:#39332C;">Sunday briefing, Wednesday midweek update, one shared production spine.</p></div>
 </div>
 </section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,110px) clamp(16px,3.2vw,56px) 0">
-<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid #14120F;padding-bottom:18px">
-<div>
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">Performance</p>
-<h2 style="margin:12px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,66px);line-height:1.02;letter-spacing:-.02em;max-width:22ch">The clicks are the story</h2>
+<section id="plus" style="padding-top:clamp(46px,5.6vw,88px);">
+<div data-reveal="" style="border-bottom:1px solid #14120F; padding-bottom:16px;">
+<p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">The extension · launched July 2026</p>
+<h2 style="margin:12px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(30px,3.4vw,52px); line-height:1.04; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">The Signal+</h2>
 </div>
-<p style="margin:0;max-width:46ch;font-size:15.5px;line-height:1.58;color:#39332C;text-wrap:pretty">Open rates industry-wide are inflated by Apple Mail Privacy Protection. Clicks are not. So the click and click-to-open numbers are the ones I lead with, and they are where The Signal separates most.</p>
-</div>
-
-<div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(20,18,15,.14);border-left:1px solid rgba(20,18,15,.14);border-right:1px solid rgba(20,18,15,.14);margin-top:clamp(26px,3vw,44px)">
-<div style="background:#fff;padding:clamp(18px,2vw,28px);flex:1 1 165px;min-width:0"><p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(30px,2.8vw,42px);line-height:.95">30</p><p style="margin:9px 0 0;font-size:13.5px;line-height:1.5;color:#5D564D">Original editions</p></div>
-<div style="background:#fff;padding:clamp(18px,2vw,28px);flex:1 1 165px;min-width:0"><p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(30px,2.8vw,42px);line-height:.95">49,053</p><p style="margin:9px 0 0;font-size:13.5px;line-height:1.5;color:#5D564D">Emails sent</p></div>
-<div style="background:#fff;padding:clamp(18px,2vw,28px);flex:1 1 165px;min-width:0"><p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(30px,2.8vw,42px);line-height:.95">27,367</p><p style="margin:9px 0 0;font-size:13.5px;line-height:1.5;color:#5D564D">Opens</p></div>
-<div style="background:#fff;padding:clamp(18px,2vw,28px);flex:1 1 165px;min-width:0"><p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(30px,2.8vw,42px);line-height:.95">3,973</p><p style="margin:9px 0 0;font-size:13.5px;line-height:1.5;color:#5D564D">Clicks</p></div>
-<div style="background:#fff;padding:clamp(18px,2vw,28px);flex:1 1 165px;min-width:0"><p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(30px,2.8vw,42px);line-height:.95">99.9%</p><p style="margin:9px 0 0;font-size:13.5px;line-height:1.5;color:#5D564D">Delivery rate</p></div>
-</div>
-<p style="margin:12px 0 0;font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#7B7368">Launch to date · Feb 1 – Aug 9, 2026 · 28 Sunday editions plus the first two Signal+ editions · Mailchimp bot-filtered</p>
-
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));border:1px solid rgba(20,18,15,.14);border-top:0">
-<div style="padding:clamp(26px,3vw,44px) clamp(20px,2.2vw,36px);border-right:1px solid rgba(20,18,15,.14)">
-<p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(50px,5.4vw,86px);line-height:.9;letter-spacing:-.022em">55.9%</p>
-<p style="margin:14px 0 0;font-size:15.5px;line-height:1.55;color:#39332C">Open rate across 30 original editions, launch to date.</p>
-<p style="margin:10px 0 0;font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#7B7368">≈1.8× the media-publisher median</p>
-</div>
-<div style="padding:clamp(26px,3vw,44px) clamp(20px,2.2vw,36px);border-right:1px solid rgba(20,18,15,.14);background:#F7F5F1">
-<p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(50px,5.4vw,86px);line-height:.9;letter-spacing:-.022em;color:#A32A19">8.1%</p>
-<p style="margin:14px 0 0;font-size:15.5px;line-height:1.55;color:#39332C">Click rate. The number Apple's privacy changes cannot inflate.</p>
-<p style="margin:10px 0 0;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#A32A19">≈7× the media-publisher median</p>
-</div>
-<div style="padding:clamp(26px,3vw,44px) clamp(20px,2.2vw,36px)">
-<p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(50px,5.4vw,86px);line-height:.9;letter-spacing:-.022em">14.5%</p>
-<p style="margin:14px 0 0;font-size:15.5px;line-height:1.55;color:#39332C">Clicks per unique open. The cleanest comparison available.</p>
-<p style="margin:10px 0 0;font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#7B7368">≈3.8× the media-publisher median</p>
-</div>
-</div>
-<p style="margin:14px 0 0;font-size:12.5px;line-height:1.6;color:#7B7368;max-width:92ch">Launched February 2026. Figures above are the measured average across 10 consecutive weekly editions, June 7 – August 9, 2026, to roughly 1,670 subscribers. Benchmarks: Omeda <em>Newsletter Benchmark Report for Media</em>, H1 2026: 31.6% open, 1.16% click, 3.8% click-to-open median across 1.95 billion sends. No credible public-media-specific newsletter benchmark exists, so no such comparison is made here.</p>
-</section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(46px,5vw,76px) clamp(16px,3.2vw,56px) 0">
-<div style="border:1px solid rgba(20,18,15,.14);padding:clamp(24px,3vw,48px)">
-<p style="margin:0 0 clamp(22px,2.4vw,34px);font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#5D564D">The Signal vs. the media-publisher median</p>
-
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px clamp(16px,2vw,32px);padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid rgba(20,18,15,.12)">
-<p style="margin:0;flex:0 0 130px;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Open rate</p>
-<div style="flex:1 1 300px;min-width:0">
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="height:16px;width:100%;max-width:100%;background:#14120F;flex:0 1 100%"></div><span style="font-size:15px;font-weight:600;flex:none">55.9%</span></div>
-<div style="display:flex;align-items:center;gap:12px"><div style="height:16px;background:#CFC8BC;flex:0 1 56.5%"></div><span style="font-size:15px;color:#7B7368;flex:none">31.6%</span></div>
-</div>
-</div>
-
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px clamp(16px,2vw,32px);padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid rgba(20,18,15,.12)">
-<p style="margin:0;flex:0 0 130px;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#A32A19">Click rate</p>
-<div style="flex:1 1 300px;min-width:0">
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="height:16px;background:#A32A19;flex:0 1 100%"></div><span style="font-size:15px;font-weight:600;color:#A32A19;flex:none">8.1%</span></div>
-<div style="display:flex;align-items:center;gap:12px"><div style="height:16px;background:#CFC8BC;flex:0 1 14.3%"></div><span style="font-size:15px;color:#7B7368;flex:none">1.16%</span></div>
-</div>
-</div>
-
-<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px clamp(16px,2vw,32px)">
-<p style="margin:0;flex:0 0 130px;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">Click-to-open</p>
-<div style="flex:1 1 300px;min-width:0">
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="height:16px;background:#14120F;flex:0 1 100%"></div><span style="font-size:15px;font-weight:600;flex:none">14.5%</span></div>
-<div style="display:flex;align-items:center;gap:12px"><div style="height:16px;background:#CFC8BC;flex:0 1 26.2%"></div><span style="font-size:15px;color:#7B7368;flex:none">3.8%</span></div>
-</div>
-</div>
-
-<div style="display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(20,18,15,.12);font-size:12.5px;font-weight:500;color:#5D564D">
-<span style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:10px;background:#14120F;flex:none"></span>The Signal</span>
-<span style="display:flex;align-items:center;gap:8px"><span style="width:18px;height:10px;background:#CFC8BC;flex:none"></span>Omeda media median, H1 2026</span>
-</div>
+<p data-reveal="" style="margin:clamp(20px,2.4vw,32px) 0 0; max-width:62ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">A free midweek political briefing launched in late July 2026, built on the same production spine. Its first two editions averaged 52.0% opens and 4.1% clicks. A young product, disclosed as such, but proof that the system extends without new headcount.</p>
+<div data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:clamp(18px,2vw,30px); margin-top:clamp(24px,2.8vw,40px);">
+<figure data-lightbox="The Signal+ masthead, Wednesday, August 5, 2026" style="margin:0;">
+<img alt="The Signal+ masthead, August 5, 2026" decoding="async" loading="lazy" src="assets/signal/plus-top.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Masthead · Your midweek signals</figcaption>
+</figure>
+<figure data-lightbox="Wednesday Check-In · Andrew Roth" style="margin:0;">
+<img alt="The Wednesday Check-In module by Andrew Roth" decoding="async" loading="lazy" src="assets/signal/plus-roth.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Wednesday Check-In · Andrew Roth</figcaption>
+</figure>
+<figure data-lightbox="On the Campaign Trail · Colin Jackson" style="margin:0;">
+<img alt="The On the Campaign Trail module by Colin Jackson" decoding="async" loading="lazy" src="assets/signal/plus-jackson.jpg" style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">On the Campaign Trail · Colin Jackson</figcaption>
+</figure>
 </div>
 </section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,110px) clamp(16px,3.2vw,56px) 0">
-<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid #14120F;padding-bottom:18px">
-<div>
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">Month by month</p>
-<h2 style="margin:12px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,66px);line-height:1.02;letter-spacing:-.02em;max-width:22ch">Every month, well above the benchmark</h2>
+<section id="distribution" style="padding-top:clamp(46px,5.6vw,88px);">
+<div data-reveal="" style="border-bottom:1px solid #14120F; padding-bottom:16px;">
+<p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">Distribution is editorial work</p>
+<h2 style="margin:12px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(30px,3.4vw,52px); line-height:1.04; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">A product needs a path to its audience.</h2>
 </div>
-<p style="margin:0;max-width:42ch;font-size:15.5px;line-height:1.58;color:#39332C;text-wrap:pretty">Monthly click rate since launch. The lowest month still runs more than four times the industry median.</p>
-</div>
-<div style="border:1px solid rgba(20,18,15,.14);border-top:0;padding:clamp(20px,2.4vw,38px)">
-<div style="overflow-x:auto;margin-top:20px"><svg viewBox="0 0 1120 375" preserveAspectRatio="xMidYMid meet" style="width:100%;min-width:680px;height:auto;font-family:Archivo,Helvetica,Arial,sans-serif">
-<line x1="80" y1="40" x2="840" y2="40" stroke="rgba(20,18,15,.09)"></line>
-<line x1="80" y1="170" x2="840" y2="170" stroke="rgba(20,18,15,.09)"></line>
-<text x="68" y="45" text-anchor="end" font-size="14" fill="#7B7368" font-weight="500">10%</text>
-<text x="68" y="175" text-anchor="end" font-size="14" fill="#7B7368" font-weight="500">5%</text>
-<text x="68" y="305" text-anchor="end" font-size="14" fill="#7B7368" font-weight="500">0</text>
-<rect x="102.3" y="107.6" width="64" height="192.4" fill="#14120F"></rect>
-<text x="134.3" y="96.6" text-anchor="middle" font-size="16" font-weight="600" fill="#14120F">7.4%</text>
-<text x="134.3" y="325" text-anchor="middle" font-size="13.5" font-weight="600" fill="#7B7368" letter-spacing=".05em">FEB</text>
-<text x="134.3" y="345" text-anchor="middle" font-size="13" fill="#A39B90">59.0% open</text>
-<rect x="210.9" y="92.0" width="64" height="208.0" fill="#14120F"></rect>
-<text x="242.9" y="81.0" text-anchor="middle" font-size="16" font-weight="600" fill="#14120F">8.0%</text>
-<text x="242.9" y="325" text-anchor="middle" font-size="13.5" font-weight="600" fill="#7B7368" letter-spacing=".05em">MAR</text>
-<text x="242.9" y="345" text-anchor="middle" font-size="13" fill="#A39B90">52.5% open</text>
-<rect x="319.4" y="107.6" width="64" height="192.4" fill="#14120F"></rect>
-<text x="351.4" y="96.6" text-anchor="middle" font-size="16" font-weight="600" fill="#14120F">7.4%</text>
-<text x="351.4" y="325" text-anchor="middle" font-size="13.5" font-weight="600" fill="#7B7368" letter-spacing=".05em">APR</text>
-<text x="351.4" y="345" text-anchor="middle" font-size="13" fill="#A39B90">50.8% open</text>
-<rect x="428.0" y="58.2" width="64" height="241.8" fill="#14120F"></rect>
-<text x="460.0" y="47.2" text-anchor="middle" font-size="16" font-weight="600" fill="#14120F">9.3%</text>
-<text x="460.0" y="325" text-anchor="middle" font-size="13.5" font-weight="600" fill="#7B7368" letter-spacing=".05em">MAY</text>
-<text x="460.0" y="345" text-anchor="middle" font-size="13" fill="#A39B90">52.8% open</text>
-<rect x="536.6" y="110.2" width="64" height="189.8" fill="#14120F"></rect>
-<text x="568.6" y="99.2" text-anchor="middle" font-size="16" font-weight="600" fill="#14120F">7.3%</text>
-<text x="568.6" y="325" text-anchor="middle" font-size="13.5" font-weight="600" fill="#7B7368" letter-spacing=".05em">JUN</text>
-<text x="568.6" y="345" text-anchor="middle" font-size="13" fill="#A39B90">49.5% open</text>
-<rect x="645.1" y="144.0" width="64" height="156.0" fill="#14120F"></rect>
-<text x="677.1" y="133.0" text-anchor="middle" font-size="16" font-weight="600" fill="#14120F">6.0%</text>
-<text x="677.1" y="325" text-anchor="middle" font-size="13.5" font-weight="600" fill="#7B7368" letter-spacing=".05em">JUL</text>
-<text x="677.1" y="345" text-anchor="middle" font-size="13" fill="#A39B90">51.2% open</text>
-<rect x="753.7" y="162.2" width="64" height="137.8" fill="#14120F"></rect>
-<text x="785.7" y="151.2" text-anchor="middle" font-size="16" font-weight="600" fill="#14120F">5.3%</text>
-<text x="785.7" y="325" text-anchor="middle" font-size="13.5" font-weight="600" fill="#7B7368" letter-spacing=".05em">AUG 1–9</text>
-<text x="785.7" y="345" text-anchor="middle" font-size="13" fill="#A39B90">50.5% open</text>
-<line x1="80" y1="300" x2="840" y2="300" stroke="rgba(20,18,15,.45)"></line>
-<line x1="80" y1="269.8" x2="866" y2="269.8" stroke="#A32A19" stroke-width="1.5" stroke-dasharray="6 4"></line>
-<text x="874" y="265.8" font-size="14" fill="#A32A19" font-weight="600">1.16%</text>
-<text x="874" y="284.8" font-size="13" fill="#A32A19">Industry median</text>
-</svg></div>
-</div>
-<p style="margin:14px 0 0;font-size:12px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#7B7368">Mailchimp bot-filtered monthly totals, all Signal messages · benchmark: Omeda, H1 2026, 1.95 billion sends</p>
-
-<div style="display:flex;flex-wrap:wrap;gap:clamp(28px,3.4vw,60px);margin-top:clamp(40px,4.6vw,72px);border-top:1px solid rgba(20,18,15,.14);padding-top:clamp(26px,3vw,44px)">
-<div style="flex:1 1 320px;min-width:0">
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">Audience</p>
-<h3 style="margin:12px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(26px,2.8vw,42px);line-height:1.06;letter-spacing:-.018em;max-width:20ch">The list grew while the rates held</h3>
-<p style="margin:16px 0 0;max-width:50ch;font-size:16px;line-height:1.62;color:#39332C;text-wrap:pretty">Recipients per Sunday send went from 1,288 at launch to 1,673 on August 9, up 29.9%, without the engagement rates sagging, which is the usual trade. Unsubscribes ran at 0.21%.</p>
-</div>
-<div style="flex:1 1 300px;min-width:0;display:flex;align-items:flex-end;gap:clamp(18px,2.4vw,40px)">
-<div style="flex:1 1 auto"><p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(38px,3.6vw,56px);line-height:.9">1,288</p><p style="margin:10px 0 0;font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#7B7368">Feb 1 launch</p></div>
-<div style="flex:0 0 auto;font-size:clamp(24px,2.4vw,34px);color:#A32A19;padding-bottom:6px">→</div>
-<div style="flex:1 1 auto"><p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(38px,3.6vw,56px);line-height:.9">1,673</p><p style="margin:10px 0 0;font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#7B7368">Aug 9 · +29.9%</p></div>
-</div>
+<p data-reveal="" style="margin:clamp(20px,2.4vw,32px) 0 0; max-width:62ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">Twelve promotional units supported launch and ongoing distribution across IAB display, social, site banners, sidebars and studio screens. Getting eyes on the work is editorial work, not an afterthought.</p>
+<div data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:clamp(18px,2vw,30px); margin-top:clamp(24px,2.8vw,40px); align-items:start;">
+<figure data-lightbox="Social unit, 1080 by 1080" style="margin:0;">
+<img alt="Square social promotional unit for The Signal" decoding="async" loading="lazy" src="assets/brand/promo-square.png" style="width:100%; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Social · 1080 × 1080</figcaption>
+</figure>
+<figure data-lightbox="Dual unit, 1200 by 480" style="margin:0;">
+<img alt="Dual promotional unit for The Signal and The Signal+" decoding="async" loading="lazy" src="assets/brand/promo-dual.png" style="width:100%; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Dual unit · 1200 × 480</figcaption>
+</figure>
+<figure data-lightbox="Site banner, 1736 by 348" style="margin:0;">
+<img alt="Site banner promotional unit for The Signal" decoding="async" loading="lazy" src="assets/brand/promo-banner.png" style="width:100%; border:1px solid rgba(20,18,15,.14);"/>
+<figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Site banner · 1736 × 348</figcaption>
+</figure>
 </div>
 </section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,110px) clamp(16px,3.2vw,56px) 0">
-<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid #14120F;padding-bottom:18px">
-<div>
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">The edition · Sunday, August 9, 2026</p>
-<h2 style="margin:12px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,66px);line-height:1.02;letter-spacing:-.02em;max-width:22ch">Seven named journalists in one edition</h2>
-</div>
-<p style="margin:0;max-width:42ch;font-size:15.5px;line-height:1.58;color:#39332C;text-wrap:pretty">Original captures of the edition as sent. Nothing here is recreated or mocked up.</p>
-</div>
-<div style="columns:2 380px;column-gap:clamp(16px,1.6vw,26px);margin-top:clamp(28px,3.2vw,48px)">
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/v2-top.png" alt="The Signal Week Ahead masthead, Good Morning note and Your Sunday Signals" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Masthead · Good Morning · Your Sunday Signals</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/v2-melorie.png" alt="Melorie's Tracking module, bylined to Melorie Begay" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Melorie's Tracking · Melorie Begay</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/v2-roth.png" alt="What Roth's Watching module, bylined to Andrew Roth" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">What Roth's Watching · Andrew Roth</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/v2-sophia.png" alt="Public Media Matters and Sophia's Pick, bylined to Sophia Saliby" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Public Media Matters · Sophia Saliby</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/v2-indepth.png" alt="In-Depth module, bylined to Sophia Saliby" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">In-Depth · Sophia Saliby</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/v2-emmaj.png" alt="Getting Lost with Emma J module, bylined to Emma J Nelson" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Getting Lost with Emma J · Emma J Nelson</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/v2-education.png" alt="From the WKAR Education Team module, bylined to Robin Pizzo" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">WKAR Education · Robin Pizzo</figcaption></figure>
-</div>
-<p style="margin:18px 0 0;font-size:15.5px;line-height:1.6;color:#39332C;max-width:74ch;text-wrap:pretty">Politics, arts, classical, education, and a reporter sent to a town unannounced to see what she finds. Seven named journalists in one edition. That breadth is the product, and it is what a small newsroom can actually sustain when the system is written down.</p>
-</section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,110px) clamp(16px,3.2vw,56px) 0">
-<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid #14120F;padding-bottom:18px">
-<div>
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">The extension · Wednesday, August 5, 2026</p>
-<h2 style="margin:12px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,66px);line-height:1.02;letter-spacing:-.02em;max-width:20ch">The Signal+</h2>
-</div>
-<p style="margin:0;max-width:42ch;font-size:15.5px;line-height:1.58;color:#39332C;text-wrap:pretty">A free midweek political briefing launched in late July 2026. Its first two editions averaged 52.0% opens and 4.1% clicks. A young product, disclosed as such.</p>
-</div>
-<div style="columns:3 300px;column-gap:clamp(16px,1.6vw,26px);margin-top:clamp(28px,3.2vw,48px)">
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/plus-top.png" alt="The Signal+ masthead and Your Midweek Signals" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Masthead · Your Midweek Signals</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/plus-roth.png" alt="Wednesday Check-In module, bylined to Andrew Roth" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Wednesday Check-In · Andrew Roth</figcaption></figure>
-<figure style="margin:0 0 clamp(16px,1.6vw,26px);break-inside:avoid;border:1px solid rgba(20,18,15,.16)"><img src="assets/signal/plus-jackson.png" alt="On the Campaign Trail module, bylined to Colin Jackson" style="width:100%" /><figcaption style="padding:12px 15px 15px;border-top:1px solid rgba(20,18,15,.16);font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">On the Campaign Trail · Colin Jackson</figcaption></figure>
-</div>
-</section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,110px) clamp(16px,3.2vw,56px) 0">
-<div style="border-bottom:1px solid #14120F;padding-bottom:18px">
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">Distribution is editorial work</p>
-<h2 style="margin:12px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,66px);line-height:1.02;letter-spacing:-.02em;max-width:24ch">I built the promotion too</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(20px,2.2vw,34px);margin-top:clamp(28px,3.2vw,46px)">
-<figure style="margin:0"><img src="assets/brand/promo-square.png" alt="Join WKAR News promotional square" style="width:100%;border:1px solid rgba(20,18,15,.14)" /><figcaption style="margin-top:12px;font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Social · 1080 × 1080</figcaption></figure>
-<figure style="margin:0"><img src="assets/brand/promo-dual.png" alt="Join WKAR News dual promotional unit" style="width:100%;border:1px solid rgba(20,18,15,.14)" /><figcaption style="margin-top:12px;font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Dual unit · 1200 × 480</figcaption></figure>
-<figure style="margin:0"><img src="assets/brand/promo-banner.png" alt="Join WKAR News banner" style="width:100%;border:1px solid rgba(20,18,15,.14)" /><figcaption style="margin-top:12px;font-size:11.5px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:#5D564D">Site banner · 1736 × 348</figcaption></figure>
-</div>
-<p style="margin:20px 0 0;font-size:15.5px;line-height:1.6;color:#39332C;max-width:70ch;text-wrap:pretty">Twelve promotional units produced in-house: IAB display, social squares, site banners and sidebars, in studio and flat variants. A newsletter nobody knows about is not a product; getting eyes on the work is editorial work, not a marketing afterthought.</p>
-</section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,110px) clamp(16px,3.2vw,56px) 0">
-<div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4vw,70px);border-top:1px solid #14120F;padding-top:clamp(28px,3.2vw,48px)">
-<div style="flex:1 1 320px;min-width:0">
-<p style="margin:0;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#A32A19">The system behind it</p>
-<h2 style="margin:12px 0 0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(30px,3.4vw,52px);line-height:1.04;letter-spacing:-.02em;max-width:18ch">Producing The Signal 101</h2>
-<p style="margin:22px 0 0;max-width:52ch;font-size:16px;line-height:1.62;color:#39332C;text-wrap:pretty">I wrote the operating manual myself: who contributes what, when it is due, how a module is structured, how the voice works, and how the edition gets assembled and sent. It is the reason the newsletter survives a vacation, a hire, or a bad week.</p>
-<p style="margin:18px 0 0;max-width:52ch;font-size:16px;line-height:1.62;color:#39332C;text-wrap:pretty">A newsroom of this size cannot afford a product that depends on one person. So I designed it not to.</p>
-</div>
-<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:1px;background:rgba(20,18,15,.14);border:1px solid rgba(20,18,15,.14)">
-<div style="background:#fff;padding:clamp(18px,1.9vw,26px);flex:1 1 260px;min-width:0"><p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#A32A19">Contribution model</p><p style="margin:9px 0 0;font-size:15.5px;line-height:1.55;color:#39332C">Named module owners, standing deadlines, one assembler on rotation.</p></div>
-<div style="background:#fff;padding:clamp(18px,1.9vw,26px);flex:1 1 260px;min-width:0"><p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#A32A19">Module structure</p><p style="margin:9px 0 0;font-size:15.5px;line-height:1.55;color:#39332C">Every unit carries a byline, a headshot, a beat and a reason to click.</p></div>
-<div style="background:#fff;padding:clamp(18px,1.9vw,26px);flex:1 1 260px;min-width:0"><p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#A32A19">Freelance layer</p><p style="margin:9px 0 0;font-size:15.5px;line-height:1.55;color:#39332C">A contribution model built in the wake of federal funding cuts, so the product did not shrink when the budget did.</p></div>
-<div style="background:#fff;padding:clamp(18px,1.9vw,26px);flex:1 1 260px;min-width:0"><p style="margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#A32A19">Cadence</p><p style="margin:9px 0 0;font-size:15.5px;line-height:1.55;color:#39332C">Sunday briefing, Wednesday midweek update, one shared production spine.</p></div>
-</div>
-</div>
-</section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,7vw,110px) clamp(16px,3.2vw,56px) 0">
-<blockquote style="margin:0;border-top:1px solid #14120F;padding-top:clamp(28px,3vw,44px)">
-<p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-style:italic;font-size:clamp(30px,4.2vw,64px);line-height:1.12;letter-spacing:-.018em;max-width:24ch;text-wrap:balance">I'm an innovator, a dreamer, and an executor.</p>
-<footer style="margin-top:26px;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#5D564D">Andrew Gillfillan</footer>
+<section style="padding:clamp(46px,5.6vw,92px) 0 clamp(46px,5.6vw,88px);">
+<blockquote data-reveal="" style="margin:0; border-top:1px solid #14120F; padding-top:clamp(26px,3vw,44px);">
+<p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-style:italic; font-size:clamp(30px,4vw,62px); line-height:1.08; letter-spacing:-.018em; max-width:20ch; text-wrap:balance;">The product is not the launch. It is the system that keeps it moving.</p>
+<footer style="margin-top:24px; font-size:11.5px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#5D564D;">Andrew Gillfillan · <a class="ag-hover-13" href="work.html" style="border-bottom:1px solid rgba(20,18,15,.3); padding-bottom:3px;">All six case studies</a></footer>
 </blockquote>
 </section>
-
-<section style="max-width:1600px;margin:0 auto;padding:clamp(56px,6vw,96px) clamp(16px,3.2vw,56px) 0">
-<div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;border-top:1px solid rgba(20,18,15,.14);padding-top:clamp(24px,2.6vw,38px)">
-<a href="index.html" style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#5D564D" style-hover="color:#A32A19">← All work</a>
-<a href="election-2026.html" style="display:flex;flex-wrap:wrap;align-items:baseline;gap:14px" style-hover="color:#A32A19"><span style="font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#5D564D">Next case study</span><span style="font-family:'Instrument Serif',Georgia,serif;font-size:clamp(26px,2.6vw,40px);line-height:1;letter-spacing:-.018em">Election 2026 →</span></a>
 </div>
-</section>
-
+</div>
 </main>
-
-<footer style="border-top:1px solid #14120F;margin-top:clamp(50px,6vw,90px);background:#14120F;color:#fff">
-<div style="max-width:1600px;margin:0 auto;padding:clamp(44px,5vw,80px) clamp(16px,3.2vw,56px)">
-<div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4vw,70px);justify-content:space-between">
-<div style="flex:1 1 340px;min-width:0">
-<p style="margin:0;font-family:'Instrument Serif',Georgia,serif;font-size:clamp(34px,3.6vw,56px);line-height:1.04;letter-spacing:-.02em;max-width:16ch">Let's talk about your content operation.</p>
-<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px">
-<a href="mailto:usadrew00@icloud.com" style="display:inline-block;background:#fff;color:#14120F;padding:15px 28px;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase" style-hover="background:#A32A19;color:#fff">usadrew00@icloud.com</a>
-<a href="https://www.linkedin.com/in/andrewjgillfillan" target="_blank" rel="noopener" style="display:inline-block;border:1px solid rgba(255,255,255,.4);padding:15px 28px;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#fff" style-hover="background:#fff;color:#14120F;border-color:#fff">LinkedIn</a>
+<div>
+<div style="max-width:1600px; margin:0 auto; padding:clamp(30px,3.6vw,52px) clamp(18px,3.4vw,64px); border-top:1px solid rgba(20,18,15,.14); display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:18px 32px;">
+<a class="ag-hover-14" href="work.html" style="display:flex; align-items:baseline; gap:11px; font-size:11.5px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#5D564D;"><span aria-hidden="true">←</span>All work</a>
+<a class="ag-hover-15" href="election-2026.html" style="display:flex; align-items:baseline; gap:14px; text-align:right;">
+<span style="font-size:11.5px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#7B7368;">Next</span>
+<span style="font-family:'Instrument Serif',Georgia,serif; font-size:clamp(22px,2.1vw,30px); line-height:1;">Election 2026 →</span>
+</a>
+</div>
+<footer style="background:#14120F; color:#EDE9E2;">
+<div style="max-width:1600px; margin:0 auto; padding:clamp(52px,6.4vw,104px) clamp(18px,3.4vw,64px) clamp(34px,3.8vw,56px);">
+<div style="display:flex; flex-wrap:wrap; gap:clamp(32px,5vw,88px); align-items:flex-end;">
+<div style="flex:2 1 440px; min-width:0;">
+<p style="margin:0; font-size:11.5px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#C4462F;">Contact</p>
+<p style="margin:clamp(16px,1.8vw,26px) 0 0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(34px,4.4vw,68px); line-height:1.02; letter-spacing:-.022em; max-width:17ch; text-wrap:balance; color:#FBFAF8;">Let’s talk about your newsroom or content operation.</p>
+</div>
+<div style="flex:1 1 260px; min-width:0; display:flex; flex-direction:column; gap:0; font-size:13px; font-weight:500; letter-spacing:.05em;">
+<a class="ag-hover-16" href="mailto:andrew@andrewgillfillan.com" style="padding:14px 0; border-top:1px solid rgba(237,233,226,.2); display:flex; justify-content:space-between; align-items:baseline; gap:16px;"><span>andrew@andrewgillfillan.com</span><span style="font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:#8C8579;">Email</span></a>
+<a class="ag-hover-17" href="https://www.linkedin.com/in/andrewjgillfillan" style="padding:14px 0; border-top:1px solid rgba(237,233,226,.2); display:flex; justify-content:space-between; align-items:baseline; gap:16px;"><span>andrewjgillfillan</span><span style="font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:#8C8579;">LinkedIn</span></a>
+<a class="ag-hover-18" href="assets/docs/Andrew_Gillfillan_Executive_Portfolio.pdf" style="padding:14px 0; border-top:1px solid rgba(237,233,226,.2); border-bottom:1px solid rgba(237,233,226,.2); display:flex; justify-content:space-between; align-items:baseline; gap:16px;"><span>Executive portfolio</span><span style="font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:#8C8579;">PDF ↓</span></a>
 </div>
 </div>
-<nav style="flex:0 1 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px 40px;font-size:12.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.62);align-content:start">
-<a href="career.html" style-hover="color:#fff">Career</a>
-<a href="at-wkar.html" style-hover="color:#fff">At WKAR</a>
-<a href="point-of-view.html" style-hover="color:#fff">Point of View</a>
-<a href="about.html" style-hover="color:#fff">About</a>
-<a href="the-signal.html" style-hover="color:#fff">The Signal</a>
-<a href="election-2026.html" style-hover="color:#fff">Election 2026</a>
-<a href="audience-growth.html" style-hover="color:#fff">Audience &amp; Growth</a>
-<a href="newsroom.html" style-hover="color:#fff">The Newsroom</a>
-</nav>
+<div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,72px); margin-top:clamp(44px,5vw,84px); padding-top:clamp(24px,2.6vw,36px); border-top:1px solid rgba(237,233,226,.18);">
+<div style="flex:1 1 160px;">
+<p style="margin:0 0 15px; font-size:10.5px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#8C8579;">Site</p>
+<div style="display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:#D3CDC3;">
+<a class="ag-hover-19" href="index.html">Home</a>
+<a class="ag-hover-20" href="work.html">Work</a>
+<a class="ag-hover-21" href="at-wkar.html">At WKAR</a>
+<a class="ag-hover-22" href="career.html">Career</a>
+<a class="ag-hover-23" href="point-of-view.html">Point of view</a>
+<a class="ag-hover-24" href="about.html">About</a>
 </div>
-<p style="margin:clamp(40px,4.6vw,70px) 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5)">Andrew Gillfillan · News Director, WKAR · Michigan State University · East Lansing, Michigan</p>
+</div>
+<div style="flex:1 1 190px;">
+<p style="margin:0 0 15px; font-size:10.5px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#8C8579;">Case studies</p>
+<div style="display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:#D3CDC3;">
+<a class="ag-hover-25" href="the-signal.html">The Signal</a>
+<a class="ag-hover-26" href="election-2026.html">Election 2026</a>
+<a class="ag-hover-27" href="audience-growth.html">Audience &amp; Growth</a>
+<a class="ag-hover-28" href="newsroom.html">The Newsroom</a>
+<a class="ag-hover-29" href="miami-stream.html">Miami stream · <em>Headliners</em></a>
+<a class="ag-hover-30" href="eightwest.html"><em>eightWest</em></a>
+</div>
+</div>
+<div style="flex:2 1 300px; display:flex; flex-direction:column; justify-content:flex-end;">
+<p style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-size:clamp(20px,1.9vw,27px); line-height:1.25; letter-spacing:-.012em; color:#FBFAF8;">Andrew Gillfillan</p>
+<p style="margin:9px 0 0; font-size:11.5px; font-weight:500; letter-spacing:.07em; text-transform:uppercase; color:#8C8579; line-height:1.9;">News Director, WKAR · Michigan State University<br/>East Lansing, Michigan</p>
+</div>
+</div>
 </div>
 </footer>
-
 </div>
-</x-dc>
+<script type="module">import { initAll } from './site-behaviors.js'; initAll();</script>
 </body>
 </html>

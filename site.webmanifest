@@ -1,0 +1,21 @@
+{
+  "name": "Andrew Gillfillan",
+  "short_name": "A. Gillfillan",
+  "description": "Editorial leadership, product strategy, audience growth.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#14120F",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
