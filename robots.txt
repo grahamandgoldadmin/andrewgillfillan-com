@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andrewgillfillan.com/sitemap.xml
-
+Sitemap: https://www.andrewgillfillan.com/sitemap.xml
