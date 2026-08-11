@@ -47,7 +47,7 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 @media(max-width:700px){[data-section-nav]{position:static!important;top:auto!important;flex:1 1 100%!important;min-width:0!important;padding-top:32px!important}}
 @media(max-width:700px){.ag-primary-nav-shell{flex-wrap:wrap!important;align-items:flex-end!important;gap:3px!important;padding-top:12px!important;min-height:0!important}.ag-primary-nav-shell>a{width:100%;font-size:20px!important}.ag-primary-nav{width:100%;justify-content:space-between!important;gap:0!important;overflow:visible!important;font-size:9px!important;letter-spacing:.055em!important}.ag-primary-nav a{padding:9px 1px 10px!important}.ag-primary-nav-shell::after{display:none!important}.ag-page-meta,.ag-election-attributes{display:none!important}}
 .ag-mobile-hero-photo{display:none}
-@media(max-width:700px){.ag-home-main{display:flex;flex-direction:column}.ag-home-hero{order:-3}.ag-home-selected-work{order:-2;padding-top:40px!important}.ag-home-career-teaser{padding-top:36px!important}.ag-mobile-hero-photo{display:block;float:right;width:112px;margin:28px 0 16px 18px!important}.ag-desktop-hero-photo{display:none!important}.ag-capabilities-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1px!important;padding-top:0!important;margin-top:28px;background:rgba(20,18,15,.14);border:1px solid rgba(20,18,15,.14)}.ag-capabilities-grid>div{min-width:0;background:#fff;padding:18px 14px!important;border-top:0!important}.ag-capabilities-grid>div:last-child{grid-column:1/-1;background:#F7F5F1}.ag-capabilities-grid>div>div{margin-top:10px!important;gap:5px!important;font-size:13px!important;line-height:1.35!important}.ag-wkar-home-stats{display:none!important}}
+@media(max-width:700px){.ag-home-main{display:flex;flex-direction:column}.ag-home-hero{order:-3}.ag-home-selected-work{order:-2;padding-top:40px!important}.ag-home-selected-grid>a{display:flex!important;flex-direction:column}.ag-home-work-copy{order:1}.ag-home-work-image{order:2;margin-top:20px}.ag-home-career-teaser{padding-top:36px!important}.ag-mobile-hero-photo{display:block;float:right;width:112px;margin:28px 0 16px 18px!important}.ag-desktop-hero-photo{display:none!important}.ag-capabilities-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1px!important;padding-top:0!important;margin-top:28px;background:rgba(20,18,15,.14);border:1px solid rgba(20,18,15,.14)}.ag-capabilities-grid>div{min-width:0;background:#fff;padding:18px 14px!important;border-top:0!important}.ag-capabilities-grid>div:last-child{grid-column:1/-1;background:#F7F5F1}.ag-capabilities-grid>div>div{margin-top:10px!important;gap:5px!important;font-size:13px!important;line-height:1.35!important}.ag-wkar-home-stats{display:none!important}}
 .ag-hover-1:hover{color:#A32A19}
 .ag-hover-2:hover{color:#A32A19}
 .ag-hover-3:hover{color:#A32A19}
@@ -274,8 +274,8 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 </div>
 <div class="ag-home-selected-grid" data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr)); gap:clamp(28px,3vw,52px); padding-top:clamp(28px,3.2vw,48px);">
 <a class="ag-hover-10" href="the-signal.html" style="display:block;">
-<div style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="The Signal masthead and the What Roth’s Watching module" decoding="async" fetchpriority="high" loading="eager" src="assets/cards/signal.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
-<div style="display:flex; gap:16px; padding-top:18px;">
+<div class="ag-home-work-image" style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="The Signal masthead and the What Roth’s Watching module" decoding="async" fetchpriority="high" loading="eager" src="assets/cards/signal.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
+<div class="ag-home-work-copy" style="display:flex; gap:16px; padding-top:18px;">
 <span style="font-size:11.5px; font-weight:600; letter-spacing:.08em; color:#A32A19; padding-top:8px;">01</span>
 <div><h3 style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(25px,2.3vw,34px); line-height:1.06; letter-spacing:-.015em;">The Signal</h3>
 <p style="margin:10px 0 0; font-size:15px; line-height:1.56; color:#39332C; max-width:44ch; text-wrap:pretty;">Identified the opportunity, conceived the product, led a four-week launch, then wrote the contribution system that lets a small newsroom sustain it.</p>
@@ -283,8 +283,8 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 </div>
 </a>
 <a class="ag-hover-11" href="election-2026.html" style="display:block;">
-<div style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="The WKAR Election 2026 destination" decoding="async" loading="lazy" src="assets/cards/election.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
-<div style="display:flex; gap:16px; padding-top:18px;">
+<div class="ag-home-work-image" style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="The WKAR Election 2026 destination" decoding="async" loading="lazy" src="assets/cards/election.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
+<div class="ag-home-work-copy" style="display:flex; gap:16px; padding-top:18px;">
 <span style="font-size:11.5px; font-weight:600; letter-spacing:.08em; color:#A32A19; padding-top:8px;">02</span>
 <div><h3 style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(25px,2.3vw,34px); line-height:1.06; letter-spacing:-.015em;">Election 2026</h3>
 <p style="margin:10px 0 0; font-size:15px; line-height:1.56; color:#39332C; max-width:44ch; text-wrap:pretty;">A statewide politics destination built from the 2026 strategic plan: structure, sections, editorial promise and a political reporter recruited to anchor it.</p>
@@ -292,8 +292,8 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 </div>
 </a>
 <a class="ag-hover-12" href="audience-growth.html" style="display:block;">
-<div style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="Monthly active users on wkar.org, January 2025 to July 2026" decoding="async" loading="lazy" src="assets/cards/audience.png" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
-<div style="display:flex; gap:16px; padding-top:18px;">
+<div class="ag-home-work-image" style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="Monthly active users on wkar.org, January 2025 to July 2026" decoding="async" loading="lazy" src="assets/cards/audience.png" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
+<div class="ag-home-work-copy" style="display:flex; gap:16px; padding-top:18px;">
 <span style="font-size:11.5px; font-weight:600; letter-spacing:.08em; color:#A32A19; padding-top:8px;">03</span>
 <div><h3 style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(25px,2.3vw,34px); line-height:1.06; letter-spacing:-.015em;">Audience &amp; Growth</h3>
 <p style="margin:10px 0 0; font-size:15px; line-height:1.56; color:#39332C; max-width:44ch; text-wrap:pretty;">During the digital transformation the audience roughly doubled and recent months ran about three times the typical-station benchmark. The floor moved, not just the peak.</p>
@@ -301,8 +301,8 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 </div>
 </a>
 <a class="ag-hover-13" href="newsroom.html" style="display:block;">
-<div style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="The WKAR politics team as published on the Election 2026 site" decoding="async" loading="lazy" src="assets/cards/newsroom.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
-<div style="display:flex; gap:16px; padding-top:18px;">
+<div class="ag-home-work-image" style="overflow:hidden; background:#F7F5F1; border:1px solid rgba(20,18,15,.14);"><img alt="The WKAR politics team as published on the Election 2026 site" decoding="async" loading="lazy" src="assets/cards/newsroom.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
+<div class="ag-home-work-copy" style="display:flex; gap:16px; padding-top:18px;">
 <span style="font-size:11.5px; font-weight:600; letter-spacing:.08em; color:#A32A19; padding-top:8px;">04</span>
 <div><h3 style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(25px,2.3vw,34px); line-height:1.06; letter-spacing:-.015em;">The Newsroom</h3>
 <p style="margin:10px 0 0; font-size:15px; line-height:1.56; color:#39332C; max-width:44ch; text-wrap:pretty;">A visible, talent-led operation: hiring, coaching, clear ownership and a freelance reporter system implemented on arrival.</p>
@@ -310,8 +310,8 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 </div>
 </a>
 <a class="ag-hover-14" href="miami-stream.html" style="display:block;">
-<div style="overflow:hidden; background:#000; border:1px solid rgba(20,18,15,.14);"><img alt="Headliners on CBS News Miami" decoding="async" loading="lazy" src="assets/video/b2Y06KX1QzI.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
-<div style="display:flex; gap:16px; padding-top:18px;">
+<div class="ag-home-work-image" style="overflow:hidden; background:#000; border:1px solid rgba(20,18,15,.14);"><img alt="Headliners on CBS News Miami" decoding="async" loading="lazy" src="assets/video/b2Y06KX1QzI.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
+<div class="ag-home-work-copy" style="display:flex; gap:16px; padding-top:18px;">
 <span style="font-size:11.5px; font-weight:600; letter-spacing:.08em; color:#A32A19; padding-top:8px;">05</span>
 <div><h3 style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(25px,2.3vw,34px); line-height:1.06; letter-spacing:-.015em;">The Miami stream</h3>
 <p style="margin:10px 0 0; font-size:15px; line-height:1.56; color:#39332C; max-width:44ch; text-wrap:pretty;">A 24-hour streaming channel whose launch I oversaw, and <em>Headliners</em>, the stream-only weekly review I conceptualized and launched in two weeks.</p>
@@ -319,8 +319,8 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 </div>
 </a>
 <a class="ag-hover-15" href="eightwest.html" style="display:block;">
-<div style="overflow:hidden; background:#000; border:1px solid rgba(20,18,15,.14);"><img alt="The eightWest set at WOOD TV8" decoding="async" loading="lazy" src="assets/career/eightwest-set.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
-<div style="display:flex; gap:16px; padding-top:18px;">
+<div class="ag-home-work-image" style="overflow:hidden; background:#000; border:1px solid rgba(20,18,15,.14);"><img alt="The eightWest set at WOOD TV8" decoding="async" loading="lazy" src="assets/career/eightwest-set.jpg" style="width:100%; aspect-ratio:3/2; object-fit:cover;"/></div>
+<div class="ag-home-work-copy" style="display:flex; gap:16px; padding-top:18px;">
 <span style="font-size:11.5px; font-weight:600; letter-spacing:.08em; color:#A32A19; padding-top:8px;">06</span>
 <div><h3 style="margin:0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(25px,2.3vw,34px); line-height:1.06; letter-spacing:-.015em;"><em>eightWest</em></h3>
 <p style="margin:10px 0 0; font-size:15px; line-height:1.56; color:#39332C; max-width:44ch; text-wrap:pretty;">The earliest proof of the pattern: a daily lifestyle show I conceived and launched at WOOD TV8 in 2007, concept through workflow through brand. Still on the air.</p>
