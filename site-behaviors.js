@@ -6,7 +6,7 @@ const REDUCED = () => window.matchMedia && window.matchMedia('(prefers-reduced-m
 export function initReveal() {
   const items = Array.from(document.querySelectorAll('[data-reveal]'));
   if (!items.length) return;
-  if (REDUCED() || !('IntersectionObserver' in window)) return;
+  if (REDUCED() || window.matchMedia('(max-width: 700px)').matches || !('IntersectionObserver' in window)) return;
   items.forEach((el, i) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(14px)';
