@@ -1,0 +1,467 @@
+/* Mobile editorial pass. Desktop presentation is intentionally untouched. */
+.ag-mobile-only {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --ag-mobile-pad: 18px;
+    --ag-mobile-muted: #6e675c;
+  }
+
+  html {
+    scroll-padding-top: 112px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .ag-mobile-only {
+    display: block !important;
+  }
+
+  /* A stable, finger-friendly navigation row. */
+  .ag-primary-nav-shell {
+    align-items: stretch !important;
+    gap: 4px !important;
+    padding: 12px var(--ag-mobile-pad) 0 !important;
+  }
+
+  .ag-primary-nav-shell > a {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 42px !important;
+    font-size: 20px !important;
+  }
+
+  .ag-primary-nav {
+    justify-content: flex-start !important;
+    gap: 23px !important;
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    font-size: 10px !important;
+    letter-spacing: .065em !important;
+  }
+
+  .ag-primary-nav a {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center !important;
+    min-height: 44px !important;
+    padding: 0 1px !important;
+    scroll-snap-align: start;
+  }
+
+  [style*="color:#7B7368"],
+  [style*="color:#8C8579"] {
+    color: var(--ag-mobile-muted) !important;
+  }
+
+  figcaption {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* A mobile page does not need a second pager or a duplicate Site directory. */
+  main + div > div:first-child {
+    display: none !important;
+  }
+
+  footer[style*="background:#14120F"] > div {
+    padding: 42px var(--ag-mobile-pad) 28px !important;
+  }
+
+  footer[style*="background:#14120F"] > div > div:first-child {
+    gap: 26px !important;
+  }
+
+  footer[style*="background:#14120F"] > div > div:first-child > div:first-child p:last-child {
+    font-size: 36px !important;
+    line-height: 1.02 !important;
+  }
+
+  footer[style*="background:#14120F"] a {
+    min-height: 44px;
+  }
+
+  footer[style*="background:#14120F"] > div > div:nth-child(2) {
+    margin-top: 24px !important;
+  }
+
+  footer[style*="background:#14120F"] > div > div:nth-child(2) > div:first-child {
+    display: none !important;
+  }
+
+  footer[style*="background:#14120F"] > div > div:nth-child(2) > div:nth-child(2) {
+    display: none !important;
+  }
+
+  main blockquote footer {
+    display: none !important;
+  }
+
+  /* Home is a front door: introduction, three selected projects, contact. */
+  .ag-page-home .ag-mobile-proof-wall,
+  .ag-page-home .ag-home-career-teaser,
+  .ag-page-home .ag-home-metrics-section,
+  .ag-page-home .ag-home-detail,
+  .ag-page-home .ag-home-process-note {
+    display: none !important;
+  }
+
+  .ag-page-home .ag-home-hero {
+    padding-top: 34px !important;
+  }
+
+  .ag-page-home .ag-home-hero h1 {
+    font-size: clamp(52px, 16vw, 68px) !important;
+  }
+
+  .ag-page-home .ag-home-hero .ag-mobile-hero-photo + p + p {
+    display: none !important;
+  }
+
+  .ag-page-home .ag-home-hero [style*="display:flex; flex-wrap:wrap; gap:14px 22px"] {
+    gap: 10px !important;
+  }
+
+  /* One visual overview, then three routes into the work. */
+  .ag-page-home .ag-mobile-proof-wall {
+    display: block !important;
+    order: -2 !important;
+    padding-top: 18px !important;
+    padding-bottom: 22px !important;
+    border-bottom: 1px solid rgba(20, 18, 15, .14) !important;
+  }
+
+  .ag-page-home .ag-mobile-proof-wall > p {
+    display: none !important;
+  }
+
+  .ag-page-home .ag-mobile-proof-wall > p:first-child {
+    display: block !important;
+    margin: 0 0 12px !important;
+    text-align: center;
+    font-size: 10.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: .1em !important;
+    text-transform: uppercase;
+    color: #a32a19 !important;
+  }
+
+  .ag-page-home .ag-mobile-proof-stack {
+    height: 224px !important;
+    margin-top: 0 !important;
+  }
+
+  .ag-page-home .ag-home-selected-work {
+    padding-top: 38px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .ag-page-home .ag-home-selected-grid {
+    padding-top: 18px !important;
+    gap: 0 !important;
+  }
+
+  .ag-page-home .ag-home-selected-grid > a {
+    padding: 28px 0 !important;
+  }
+
+  .ag-page-home .ag-home-selected-grid > a:nth-child(n + 4) {
+    display: none !important;
+  }
+
+  .ag-page-home .ag-home-selected-grid > a > div:has(h3),
+  .ag-page-home .ag-home-selected-grid > a > div:has(h2) {
+    order: 1;
+  }
+
+  .ag-page-home .ag-home-selected-grid > a > div:has(img) {
+    order: 2;
+    margin-top: 18px;
+  }
+
+  .ag-page-home .ag-home-selected-grid > a > div:has(img) img {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .ag-page-home .ag-home-selected-grid div[style*="display:flex; flex-wrap:wrap; gap:20px 36px"] {
+    display: none !important;
+  }
+
+  .ag-page-home .ag-home-selected-grid p[style*="font-size:15px"] {
+    display: none !important;
+  }
+
+  /* Work is a compact index. The evidence lives on the linked pages. */
+  .ag-page-work main section:nth-of-type(2) > a {
+    padding: 28px 0 !important;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a > div:has(h2) {
+    order: 1;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a > div:has(img) {
+    order: 2;
+    margin-top: 18px;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a div[style*="display:flex; flex-wrap:wrap; gap:20px 36px"] {
+    display: none !important;
+  }
+
+  .ag-page-work main section:first-of-type > div > p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a p[style*="font-size:16px"] {
+    display: none !important;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a > div:has(img) img {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* At WKAR owns the operating model; the Work page owns the case-study index. */
+  .ag-page-wkar .ag-wkar-metrics,
+  .ag-page-wkar .ag-wkar-work-grid,
+  .ag-page-wkar .ag-wkar-hero-card,
+  .ag-page-wkar .ag-wkar-hero-long,
+  .ag-page-wkar .ag-wkar-case-intro {
+    display: none !important;
+  }
+
+  .ag-page-wkar .ag-wkar-hero > div > div:last-child {
+    padding-bottom: 18px !important;
+  }
+
+  .ag-page-wkar .ag-wkar-operating-change {
+    padding-top: 36px !important;
+    order: -2 !important;
+  }
+
+  .ag-page-wkar .ag-wkar-opening-image {
+    margin-top: 26px !important;
+    order: -1 !important;
+  }
+
+  .ag-page-wkar .ag-wkar-opening-image img {
+    height: 250px !important;
+  }
+
+  .ag-page-wkar .ag-wkar-mobile-work-link {
+    margin: 28px var(--ag-mobile-pad) 8px;
+    border-top: 1px solid #14120f;
+    border-bottom: 1px solid rgba(20, 18, 15, .14);
+  }
+
+  .ag-page-wkar .ag-wkar-mobile-work-link a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 58px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+  }
+
+  /* Career owns Miami and California. Keep the narrative, edit the galleries. */
+  .ag-page-career .ag-career-chapter-intro {
+    display: none !important;
+  }
+
+  .ag-page-career .ag-career-mobile-copy {
+    display: block !important;
+    margin-top: 18px !important;
+  }
+
+  .ag-page-career .ag-career-miami-gallery > figure,
+  .ag-page-career .ag-career-california-gallery > figure,
+  .ag-page-career .ag-career-miami-video-grid > figure,
+  .ag-page-career .ag-career-california-video-grid > figure,
+  .ag-page-career .ag-career-lived-gallery > figure,
+  .ag-page-career .ag-career-weather-gallery > figure,
+  .ag-page-career #miami > section:nth-of-type(n + 2),
+  .ag-page-career #california > section:nth-of-type(n + 2) {
+    display: none !important;
+  }
+
+  .ag-page-career .ag-career-chapter > div > p:nth-of-type(n + 3),
+  .ag-page-career #miami > div > p:nth-of-type(n + 3),
+  .ag-page-career #california > div > p:nth-of-type(n + 3) {
+    display: none !important;
+  }
+
+  .ag-page-career .ag-career-chapter > figure img {
+    max-height: 270px !important;
+    object-fit: cover !important;
+  }
+
+  .ag-page-career #miami > p:not(.ag-career-mobile-copy),
+  .ag-page-career #miami > .ag-career-miami-gallery,
+  .ag-page-career #miami > .ag-career-miami-video-grid,
+  .ag-page-career #miami > div:not(:first-child),
+  .ag-page-career #california > .ag-career-california-gallery-lead,
+  .ag-page-career #california > .ag-career-california-gallery,
+  .ag-page-career #california > .ag-career-california-video-grid,
+  .ag-page-career #california > div:not(:first-child),
+  .ag-page-career #weather .ag-career-weather-gallery,
+  .ag-page-career #weather p:nth-of-type(n + 2),
+  .ag-page-career #grand-rapids > p:nth-of-type(n + 2),
+  .ag-page-career #grand-rapids > div {
+    display: none !important;
+  }
+
+  .ag-page-career #miami,
+  .ag-page-career #california,
+  .ag-page-career #weather,
+  .ag-page-career #grand-rapids {
+    padding-top: 46px !important;
+  }
+
+  /* About keeps the personal arc and the approved AI item, without two contact blocks. */
+  .ag-page-about .ag-about-contact {
+    display: none !important;
+  }
+
+  .ag-page-about .ag-about-story-item p:nth-of-type(2) {
+    display: none !important;
+  }
+
+  .ag-page-about .ag-about-story-item p:nth-of-type(n + 2) {
+    display: none !important;
+  }
+
+  .ag-page-about .ag-about-hero-copy p:nth-of-type(2),
+  .ag-page-about .ag-about-gifts > p {
+    display: none !important;
+  }
+
+  .ag-page-about .ag-about-story-item {
+    display: grid !important;
+    grid-template-columns: 34px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .ag-page-about .ag-about-story-item > div:nth-child(2) {
+    align-self: start;
+  }
+
+  .ag-page-about .ag-about-story-item > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ag-page-about .ag-about-gifts-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ag-page-about .ag-about-gifts-grid > div:last-child {
+    grid-column: auto;
+  }
+
+  .ag-page-about .ag-about-gifts-grid > div:last-child {
+    grid-column: 1 / -1;
+    background: #f7f5f1;
+    padding: 16px !important;
+    border-top-color: #a32a19 !important;
+  }
+
+  /* Detailed case studies stay useful without repeating their own headline evidence. */
+  .ag-page-signal .ag-signal-hero-stats,
+  .ag-page-signal #distribution,
+  .ag-page-audience #newsletter,
+  .ag-page-audience #numbers figure,
+  .ag-page-newsroom .ag-newsroom-hero-image,
+  .ag-page-newsroom .ag-newsroom-module-gallery,
+  .ag-page-eightwest .ag-eightwest-career-images {
+    display: none !important;
+  }
+
+  .ag-page-signal .ag-signal-edition-gallery > figure:nth-child(n + 2),
+  .ag-page-signal .ag-signal-plus-gallery > figure:nth-child(n + 2) {
+    display: none !important;
+  }
+
+  .ag-page-signal main > div[style*="display:flex"] > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ag-page-signal #opportunity { order: 1; }
+  .ag-page-signal #performance { order: 2; }
+  .ag-page-signal #system { order: 3; }
+  .ag-page-signal #edition { order: 4; }
+  .ag-page-signal #plus { order: 5; }
+  .ag-page-signal #distribution { order: 6; }
+  .ag-page-signal main > div[style*="display:flex"] > div > section:last-child { order: 7; }
+
+  .ag-page-signal #edition > p:first-of-type,
+  .ag-page-signal #edition > p:last-of-type,
+  .ag-page-signal #performance > div:nth-of-type(3),
+  .ag-page-signal #performance > p:last-child {
+    display: none !important;
+  }
+
+  .ag-page-signal #edition > figure img,
+  .ag-page-signal .ag-signal-edition-gallery img,
+  .ag-page-signal .ag-signal-plus-gallery img {
+    max-height: 300px !important;
+    object-fit: cover !important;
+    object-position: top !important;
+  }
+
+  .ag-page-newsroom #front-door > p {
+    display: none !important;
+  }
+
+  .ag-page-newsroom #front-door + figure {
+    margin-top: 22px !important;
+  }
+
+  .ag-page-election #promise .ag-election-promise-grid > div p:last-child {
+    display: none !important;
+  }
+
+  .ag-page-election #promise .ag-election-promise-grid > div {
+    padding: 13px 0 !important;
+  }
+
+  .ag-page-election #promise .ag-election-promise-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ag-page-audience .ag-audience-chart {
+    margin-top: 22px !important;
+    padding: 14px !important;
+    overflow-x: auto;
+  }
+
+  .ag-page-audience .ag-audience-chart svg {
+    min-width: 680px;
+  }
+
+  .ag-page-pov main > section:last-child {
+    display: none !important;
+  }
+
+  .ag-page-miami main > section:nth-of-type(2) > div,
+  .ag-page-eightwest main > section:nth-of-type(2) > div,
+  .ag-page-eightwest main > section:nth-of-type(3) > div:nth-child(2) {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ag-page-eightwest main > section:first-of-type > div > div:first-child > p:last-child {
+    display: none !important;
+  }
+
+  .ag-page-eightwest main > section:nth-of-type(4) p:nth-of-type(3) {
+    display: none !important;
+  }
+}

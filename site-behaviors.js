@@ -147,10 +147,20 @@ export function initSectionNav() {
   targets.forEach((t) => io.observe(t));
 }
 
+export function initMobilePrimaryNavPosition() {
+  if (!window.matchMedia('(max-width: 700px)').matches) return;
+  const nav = document.querySelector('.ag-primary-nav');
+  const current = nav && nav.querySelector('a[style*="border-bottom:2px solid #A32A19"]');
+  if (!nav || !current) return;
+  const left = Math.max(0, current.offsetLeft - 12);
+  nav.scrollTo({ left, behavior: 'auto' });
+}
+
 export function initAll() {
   initReveal();
   initChartDraw();
   initLightbox();
   initBackToTop();
   initSectionNav();
+  initMobilePrimaryNavPosition();
 }
