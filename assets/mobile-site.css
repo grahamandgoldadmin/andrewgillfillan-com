@@ -200,14 +200,28 @@
   /* Work is a compact index. The evidence lives on the linked pages. */
   .ag-page-work main section:nth-of-type(2) > a {
     padding: 28px 0 !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
   }
 
   .ag-page-work main section:nth-of-type(2) > a > div:has(h2) {
+    display: contents;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a > div:has(h2) > div:first-child {
     order: 1;
+    width: 100%;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a h2 {
+    order: 2;
+    width: 100%;
   }
 
   .ag-page-work main section:nth-of-type(2) > a > div:has(img) {
-    order: 2;
+    order: 6;
+    width: 100%;
     margin-top: 18px;
   }
 
@@ -222,6 +236,37 @@
 
   .ag-page-work main section:nth-of-type(2) > a p[style*="font-size:16px"] {
     display: none !important;
+  }
+
+  .ag-page-work .ag-work-mobile-summary {
+    display: block !important;
+    order: 3;
+    width: 100%;
+    margin: 12px 0 0;
+    max-width: 34ch;
+    font-size: 14.5px;
+    line-height: 1.52;
+    color: #39332c;
+    text-wrap: pretty;
+  }
+
+  .ag-page-work .ag-work-mobile-proof {
+    display: block !important;
+    order: 4;
+    width: 100%;
+    margin: 13px 0 0;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: .075em;
+    text-transform: uppercase;
+    color: #7b7368;
+  }
+
+  .ag-page-work main section:nth-of-type(2) > a > div:has(h2) > p[style*="font-size:11.5px"] {
+    order: 5;
+    width: 100%;
+    margin-top: 16px !important;
   }
 
   .ag-page-work main section:nth-of-type(2) > a > div:has(img) img {
@@ -243,12 +288,12 @@
 
   .ag-page-wkar .ag-wkar-operating-change {
     padding-top: 36px !important;
-    order: -2 !important;
+    order: -1 !important;
   }
 
   .ag-page-wkar .ag-wkar-opening-image {
-    margin-top: 26px !important;
-    order: -1 !important;
+    margin-top: 18px !important;
+    order: -2 !important;
   }
 
   .ag-page-wkar .ag-wkar-opening-image img {
