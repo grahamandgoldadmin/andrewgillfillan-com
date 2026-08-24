@@ -297,8 +297,8 @@
 
   body.ag-page-work main > section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 12px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
     padding-top: 24px !important;
     padding-bottom: 42px !important;
   }
@@ -311,11 +311,6 @@
     min-width: 0;
     padding: 0 !important;
     border-bottom: 0 !important;
-  }
-
-  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(1),
-  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(4) {
-    grid-column: 1 / -1;
   }
 
   body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) {
@@ -332,7 +327,7 @@
     width: 100% !important;
     margin: 0 !important;
     overflow: hidden;
-    aspect-ratio: 1 / 1 !important;
+    aspect-ratio: 16 / 9 !important;
     background: var(--ag-mobile-card);
   }
 
@@ -343,9 +338,7 @@
     object-fit: cover;
   }
 
-  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(1) > div:has(img):not(:has(h2)),
-  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(4) > div:has(img):not(:has(h2)),
-  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(4) [role="img"] {
+  body.ag-page-work main > section:nth-of-type(2) > a [role="img"] {
     aspect-ratio: 16 / 9 !important;
   }
 
@@ -359,10 +352,22 @@
     font-size: 18px !important;
   }
 
-  body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > div:first-child span:last-child,
-  body.ag-page-work main > section:nth-of-type(2) .ag-work-mobile-summary,
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > div:first-child span:last-child {
+    display: inline !important;
+    font-size: 9.5px !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) .ag-work-mobile-summary {
+    display: block !important;
+    margin-top: 12px !important;
+    max-width: 38ch !important;
+    font-size: 15.5px !important;
+    line-height: 1.58 !important;
+  }
+
   body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > p:last-child {
-    display: none !important;
+    display: block !important;
+    margin-top: 16px !important;
   }
 
   body.ag-page-work main > section:nth-of-type(2) h2 {
@@ -375,6 +380,11 @@
     margin-top: 9px !important;
     font-size: 9.5px !important;
     line-height: 1.42 !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a:not(:last-child) {
+    padding-bottom: 32px !important;
+    border-bottom: 1px solid rgba(20, 18, 15, .14) !important;
   }
 
   /* At WKAR: make the operating model a concise, swipeable deck. */
@@ -604,6 +614,8 @@
     max-width: 32ch !important;
     font-size: 17px !important;
     line-height: 1.56 !important;
+    padding-left: 15px !important;
+    border-left: 3px solid #a32a19;
   }
 
   /* Case studies: use large media and dark quotes as pacing devices. */
@@ -1011,8 +1023,8 @@
   .ag-page-career #california > .ag-career-california-video-grid,
   .ag-page-career #california > div:not(:first-child),
   .ag-page-career #weather .ag-career-weather-gallery,
-  .ag-page-career #weather p:nth-of-type(n + 2),
-  .ag-page-career #grand-rapids > p:nth-of-type(n + 2),
+  .ag-page-career #weather p:nth-of-type(n + 2):not(.ag-career-mobile-copy),
+  .ag-page-career #grand-rapids > p:nth-of-type(n + 2):not(.ag-career-mobile-copy),
   .ag-page-career #grand-rapids > div {
     display: none !important;
   }
