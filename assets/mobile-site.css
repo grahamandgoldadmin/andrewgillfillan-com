@@ -312,6 +312,30 @@ body.ag-page-data .ag-tracker-gallery {
   .ag-newsroom-voices-collage { aspect-ratio: 4 / 5; }
 }
 
+@media (max-width: 700px) {
+  body.ag-page-wkar .ag-wkar-newsletter-gallery {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    align-self: stretch !important;
+    box-sizing: border-box;
+  }
+
+  body.ag-page-wkar .ag-wkar-newsletter-gallery > div:first-child {
+    width: auto !important;
+    max-width: calc(100% - (2 * var(--ag-mobile-pad))) !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+
+  body.ag-page-wkar .ag-wkar-newsletter-gallery .ag-wkar-module-grid {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+}
+
 /* Desktop home proof strip: authentic work appears immediately after the hero. */
 .ag-desktop-proof-strip {
   max-width: 1600px;
