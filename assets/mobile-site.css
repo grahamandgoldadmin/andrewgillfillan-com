@@ -3,6 +3,659 @@
   display: none !important;
 }
 
+/*
+ * Mobile v2: visual-first editorial rhythm.
+ * These selectors intentionally outrank the per-page production styles that
+ * follow this stylesheet in the document head. Desktop remains untouched.
+ */
+@media (max-width: 700px) {
+  :root {
+    --ag-mobile-pad: 18px;
+    --ag-mobile-card: #f3f0ea;
+    --ag-mobile-ink: #14120f;
+    --ag-mobile-red: #a32a19;
+  }
+
+  body header {
+    box-shadow: 0 8px 24px rgba(20, 18, 15, .055);
+  }
+
+  body .ag-primary-nav-shell {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    min-height: 0 !important;
+    padding: 9px var(--ag-mobile-pad) 0 !important;
+  }
+
+  body .ag-primary-nav-shell::after {
+    display: none !important;
+  }
+
+  body .ag-primary-nav-shell > a {
+    width: 100% !important;
+    min-height: 36px !important;
+    font-size: 21px !important;
+  }
+
+  body .ag-primary-nav {
+    width: calc(100% + (var(--ag-mobile-pad) * 2)) !important;
+    margin-inline: calc(var(--ag-mobile-pad) * -1) !important;
+    padding-inline: var(--ag-mobile-pad) !important;
+    justify-content: flex-start !important;
+    gap: 22px !important;
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    font-size: 10px !important;
+    letter-spacing: .065em !important;
+  }
+
+  body .ag-primary-nav a {
+    flex: 0 0 auto !important;
+    min-height: 42px !important;
+    padding: 0 1px !important;
+    scroll-snap-align: start;
+  }
+
+  body main h1 {
+    text-wrap: balance;
+  }
+
+  body main > section:first-of-type {
+    padding-top: 22px !important;
+  }
+
+  body main blockquote {
+    margin-inline: calc(var(--ag-mobile-pad) * -1) !important;
+    padding: 30px var(--ag-mobile-pad) 34px !important;
+    border-top: 0 !important;
+    background: var(--ag-mobile-ink);
+    color: #fbfaf8;
+  }
+
+  body main blockquote p {
+    color: #fbfaf8 !important;
+  }
+
+  /* Home: one sharp promise, an image rail, then a swipeable work deck. */
+  body.ag-page-home .ag-home-hero {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  body.ag-page-home .ag-home-hero h1 {
+    font-size: clamp(52px, 15.5vw, 64px) !important;
+    line-height: .91 !important;
+  }
+
+  body.ag-page-home .ag-mobile-hero-photo {
+    display: block !important;
+    float: right;
+    width: min(44vw, 174px) !important;
+    margin: 22px -2px 12px 17px !important;
+    padding-top: 4px;
+    border-top: 3px solid var(--ag-mobile-red);
+  }
+
+  body.ag-page-home .ag-mobile-hero-photo + .ag-mobile-hero-deck {
+    display: block !important;
+    margin: 25px 0 0 !important;
+    max-width: 28ch;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 24px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.015em;
+    color: var(--ag-mobile-ink) !important;
+    text-wrap: balance;
+  }
+
+  body.ag-page-home .ag-mobile-hero-deck ~ p:not(.ag-mobile-only) {
+    display: none !important;
+  }
+
+  body.ag-page-home .ag-home-hero [style*="display:flex; flex-wrap:wrap; gap:12px 26px"] {
+    clear: both;
+    padding-top: 4px;
+    gap: 10px 18px !important;
+  }
+
+  body.ag-page-home .ag-home-hero [style*="display:flex; flex-wrap:wrap; gap:12px 26px"] a:first-child {
+    flex: 1 1 170px;
+    text-align: center;
+  }
+
+  body.ag-page-home .ag-home-hero [style*="display:flex; flex-wrap:wrap; gap:12px 26px"] a:last-child {
+    border: 0 !important;
+    padding-inline: 4px !important;
+  }
+
+  body.ag-page-home .ag-mobile-proof-wall {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 26px 0 12px !important;
+    overflow: hidden !important;
+    background: var(--ag-mobile-card);
+  }
+
+  body.ag-page-home .ag-mobile-proof-wall > div:first-child {
+    margin-inline: var(--ag-mobile-pad);
+    padding-top: 0 !important;
+    border-top: 0 !important;
+  }
+
+  body.ag-page-home .ag-mobile-proof-wall > div:first-child p {
+    display: block !important;
+    margin: 0 !important;
+    text-align: left !important;
+    font-family: 'Instrument Serif', Georgia, serif !important;
+    font-size: 32px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    letter-spacing: -.02em !important;
+    text-transform: none !important;
+    color: var(--ag-mobile-ink) !important;
+  }
+
+  body.ag-page-home .ag-mobile-proof-stack {
+    position: relative !important;
+    display: flex !important;
+    gap: 10px;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw;
+    height: auto !important;
+    margin: 18px 0 0 !important;
+    padding: 0 var(--ag-mobile-pad) 16px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.ag-page-home .ag-mobile-proof-stack::-webkit-scrollbar,
+  body.ag-page-home .ag-home-selected-grid::-webkit-scrollbar,
+  body.ag-page-pov main > section:nth-of-type(2)::-webkit-scrollbar,
+  body.ag-page-about .ag-about-story-list::-webkit-scrollbar,
+  body.ag-page-wkar .ag-wkar-operating-change > div:nth-child(2)::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.ag-page-home .ag-mobile-proof-card {
+    position: relative !important;
+    inset: auto !important;
+    flex: 0 0 76vw;
+    width: auto !important;
+    margin: 0 !important;
+    aspect-ratio: 4 / 3 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    scroll-snap-align: center;
+  }
+
+  body.ag-page-home .ag-mobile-proof-card:nth-child(even) {
+    flex-basis: 62vw;
+  }
+
+  body.ag-page-home .ag-mobile-proof-card::after {
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    padding: 5px 7px;
+    background: rgba(20, 18, 15, .84);
+    color: #fff;
+    font: 600 9px/1 Archivo, Helvetica, Arial, sans-serif;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+  }
+
+  body.ag-page-home .ag-mobile-proof-card--eightwest::after { content: 'Original products'; }
+  body.ag-page-home .ag-mobile-proof-card--otr::after { content: 'Public media'; }
+  body.ag-page-home .ag-mobile-proof-card--miami::after { content: 'Newsroom leadership'; }
+  body.ag-page-home .ag-mobile-proof-card--fire::after { content: 'Breaking news'; }
+
+  body.ag-page-home .ag-mobile-proof-wall > p:last-child {
+    margin-inline: var(--ag-mobile-pad) !important;
+    text-align: left !important;
+  }
+
+  body.ag-page-home .ag-home-selected-work {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 38px 0 18px !important;
+    overflow: hidden;
+  }
+
+  body.ag-page-home .ag-home-selected-work > div:first-child {
+    margin-inline: var(--ag-mobile-pad);
+  }
+
+  body.ag-page-home .ag-home-selected-work > div:first-child h2 {
+    font-size: 42px !important;
+  }
+
+  body.ag-page-home .ag-home-selected-grid {
+    display: flex !important;
+    gap: 13px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw;
+    margin: 0 !important;
+    padding: 20px var(--ag-mobile-pad) 24px !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.ag-page-home .ag-home-selected-grid > a {
+    flex: 0 0 82vw;
+    padding: 0 !important;
+    overflow: hidden;
+    background: var(--ag-mobile-card);
+    border-bottom: 0 !important;
+    scroll-snap-align: center;
+  }
+
+  body.ag-page-home .ag-home-selected-grid > a > .ag-home-work-image {
+    order: 1 !important;
+    margin: 0 !important;
+    border: 0 !important;
+  }
+
+  body.ag-page-home .ag-home-selected-grid > a > .ag-home-work-image img {
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  body.ag-page-home .ag-home-selected-grid > a > .ag-home-work-copy {
+    order: 2 !important;
+    padding: 16px 15px 19px !important;
+  }
+
+  body.ag-page-home .ag-home-selected-grid > a h3 {
+    font-size: 30px !important;
+  }
+
+  /* Work: turn six long essays into a fast visual index. */
+  body.ag-page-work main > section:first-of-type > div > p:not(.ag-mobile-only) {
+    display: none !important;
+  }
+
+  body.ag-page-work .ag-work-mobile-intro {
+    display: block !important;
+    margin: 18px 0 0 !important;
+    max-width: 34ch;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: #39332c;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 12px;
+    padding-top: 24px !important;
+    padding-bottom: 42px !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    min-width: 0;
+    padding: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(1),
+  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) {
+    display: block !important;
+    flex: none !important;
+    order: 2 !important;
+    padding-top: 12px;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(img):not(:has(h2)) {
+    display: block !important;
+    flex: none !important;
+    order: 1 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    overflow: hidden;
+    aspect-ratio: 1 / 1 !important;
+    background: var(--ag-mobile-card);
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(img):not(:has(h2)) img {
+    width: 100%;
+    height: 100% !important;
+    aspect-ratio: auto !important;
+    object-fit: cover;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(1) > div:has(img):not(:has(h2)),
+  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(4) > div:has(img):not(:has(h2)),
+  body.ag-page-work main > section:nth-of-type(2) > a:nth-child(4) [role="img"] {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > div:first-child {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 8px !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > div:first-child span:first-child {
+    font-size: 18px !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > div:first-child span:last-child,
+  body.ag-page-work main > section:nth-of-type(2) .ag-work-mobile-summary,
+  body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > p:last-child {
+    display: none !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) h2 {
+    margin-top: 7px !important;
+    font-size: clamp(25px, 7.4vw, 32px) !important;
+  }
+
+  body.ag-page-work main > section:nth-of-type(2) .ag-work-mobile-proof {
+    display: block !important;
+    margin-top: 9px !important;
+    font-size: 9.5px !important;
+    line-height: 1.42 !important;
+  }
+
+  /* At WKAR: make the operating model a concise, swipeable deck. */
+  body.ag-page-wkar .ag-wkar-operating-change {
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden;
+  }
+
+  body.ag-page-wkar .ag-wkar-operating-change > div:nth-child(2) {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - var(--ag-mobile-pad));
+    margin-top: 22px !important;
+    margin-right: calc(var(--ag-mobile-pad) * -1);
+    padding-right: var(--ag-mobile-pad);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.ag-page-wkar .ag-wkar-operating-change > div:nth-child(2) > div {
+    flex: 0 0 82vw;
+    min-width: 0;
+    padding: 22px !important;
+    border-top: 3px solid var(--ag-mobile-red) !important;
+    background: var(--ag-mobile-card);
+    scroll-snap-align: center;
+  }
+
+  body.ag-page-wkar .ag-wkar-operating-change > div:nth-child(2) > div:first-child {
+    background: var(--ag-mobile-ink);
+  }
+
+  body.ag-page-wkar .ag-wkar-operating-change > div:nth-child(2) > div:first-child > p {
+    color: #fbfaf8 !important;
+  }
+
+  /* Point of view: six editorial cards instead of six identical rows. */
+  body.ag-page-pov main > section:first-of-type > div:last-child {
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) {
+    display: flex;
+    gap: 12px;
+    max-width: none !important;
+    padding: 18px var(--ag-mobile-pad) 34px !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.ag-page-pov .ag-pov-mobile-guide {
+    display: block !important;
+    flex: 0 0 100%;
+    align-self: flex-start;
+    margin: 0 -100% 0 0 !important;
+    padding-bottom: 0;
+    transform: translateY(-2px);
+    font-size: 10px !important;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: #7b7368;
+    pointer-events: none;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal] {
+    display: grid !important;
+    grid-template-columns: 32px 1fr !important;
+    gap: 10px !important;
+    flex: 0 0 82vw;
+    margin-top: 26px;
+    padding: 24px 20px 26px !important;
+    border-top: 3px solid var(--ag-mobile-red) !important;
+    background: var(--ag-mobile-card);
+    scroll-snap-align: center;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(2),
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(5) {
+    background: var(--ag-mobile-ink);
+    color: #fbfaf8;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal] > div:first-child {
+    width: auto !important;
+    padding-top: 5px !important;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal] > div:nth-child(2) {
+    min-width: 0;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal] > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal] h3 {
+    font-size: 30px !important;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(2) h3,
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(2) p,
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(5) h3,
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(5) p {
+    color: #fbfaf8 !important;
+  }
+
+  body.ag-page-pov main > section:nth-of-type(2) > div:last-child:not([data-reveal]) {
+    display: none;
+  }
+
+  /* About: keep the personal story, but make it a paced timeline rail. */
+  body.ag-page-about main > section:first-of-type > div:last-child {
+    padding-top: 18px !important;
+  }
+
+  body.ag-page-about main > section:first-of-type > div:last-child > div:last-child {
+    max-width: none !important;
+    margin-inline: calc(var(--ag-mobile-pad) * -1);
+  }
+
+  body.ag-page-about main > section:first-of-type > div:last-child > div:last-child img {
+    width: 100%;
+    height: min(112vw, 470px);
+    object-fit: cover;
+    object-position: center 12%;
+  }
+
+  body.ag-page-about .ag-about-story-list {
+    display: flex;
+    gap: 12px;
+    margin-right: calc(var(--ag-mobile-pad) * -1) !important;
+    padding: 2px var(--ag-mobile-pad) 18px 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.ag-page-about .ag-about-story-item {
+    flex: 0 0 82vw;
+    padding: 22px 18px 24px !important;
+    border-top: 3px solid var(--ag-mobile-red) !important;
+    background: var(--ag-mobile-card);
+    scroll-snap-align: center;
+  }
+
+  body.ag-page-about .ag-about-story-item:nth-child(3) {
+    background: var(--ag-mobile-ink);
+    color: #fbfaf8;
+  }
+
+  body.ag-page-about .ag-about-story-item:nth-child(3) h3,
+  body.ag-page-about .ag-about-story-item:nth-child(3) p {
+    color: #fbfaf8 !important;
+  }
+
+  body.ag-page-about .ag-about-gifts-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1px !important;
+    padding: 1px;
+    background: rgba(20, 18, 15, .14);
+  }
+
+  body.ag-page-about .ag-about-gifts-grid > div {
+    min-width: 0;
+    padding: 16px 14px !important;
+    border-top: 0 !important;
+    background: #fff;
+  }
+
+  body.ag-page-about .ag-about-gifts-grid > div:last-child {
+    grid-column: 1 / -1;
+    background: var(--ag-mobile-card);
+  }
+
+  /* Career: chapters read as distinct visual scenes, not repeated modules. */
+  body.ag-page-career main > section:first-of-type > div:last-child > div:first-child > p:not(:first-child):not(.ag-career-mobile-deck) {
+    display: none !important;
+  }
+
+  body.ag-page-career .ag-career-mobile-deck {
+    display: block !important;
+    margin: 20px 0 0 !important;
+    max-width: 33ch;
+    font-size: 16px !important;
+    line-height: 1.58 !important;
+    color: #39332c;
+  }
+
+  body.ag-page-career #miami,
+  body.ag-page-career #california,
+  body.ag-page-career #weather,
+  body.ag-page-career #grand-rapids {
+    margin-inline: calc(var(--ag-mobile-pad) * -1);
+    padding: 44px var(--ag-mobile-pad) 42px !important;
+  }
+
+  body.ag-page-career #miami,
+  body.ag-page-career #weather {
+    background: var(--ag-mobile-card);
+  }
+
+  body.ag-page-career #california .ag-career-chapter-image,
+  body.ag-page-career #miami .ag-career-chapter-image {
+    margin-inline: calc(var(--ag-mobile-pad) * -1) !important;
+  }
+
+  body.ag-page-career #california .ag-career-chapter-image img,
+  body.ag-page-career #miami .ag-career-chapter-image img {
+    aspect-ratio: 4 / 3 !important;
+    max-height: none !important;
+  }
+
+  body.ag-page-career .ag-career-mobile-copy {
+    max-width: 32ch !important;
+    font-size: 17px !important;
+    line-height: 1.56 !important;
+  }
+
+  /* Case studies: use large media and dark quotes as pacing devices. */
+  body.ag-page-signal main > section:first-of-type > div:last-child > div:first-child > p:not(:first-child):not(.ag-case-mobile-deck),
+  body.ag-page-election main > section:first-of-type > div:last-child > div:first-child > p:not(:first-child):not(.ag-case-mobile-deck),
+  body.ag-page-audience main > section:first-of-type > div:last-child > div:first-child > p:not(:first-child):not(.ag-case-mobile-deck),
+  body.ag-page-newsroom main > section:first-of-type > div:last-child > div:first-child > p:not(:first-child):not(.ag-case-mobile-deck),
+  body.ag-page-miami main > section:first-of-type > div:last-child > div:first-child > p:not(:first-child):not(.ag-case-mobile-deck),
+  body.ag-page-eightwest main > section:first-of-type > div:last-child > div:first-child > p:not(:first-child):not(.ag-case-mobile-deck) {
+    display: none !important;
+  }
+
+  body .ag-case-mobile-deck {
+    display: block !important;
+    margin: 20px 0 0 !important;
+    max-width: 33ch;
+    font-size: 16px !important;
+    line-height: 1.58 !important;
+    color: #39332c;
+    text-wrap: pretty;
+  }
+
+  body.ag-page-eightwest main > section:first-of-type > div:last-child > div:first-child > .ag-case-mobile-deck {
+    display: block !important;
+  }
+
+  body.ag-page-signal main > figure:first-of-type,
+  body.ag-page-election main > figure:first-of-type,
+  body.ag-page-audience main > figure:first-of-type,
+  body.ag-page-newsroom main > figure:first-of-type,
+  body.ag-page-miami main > figure:first-of-type,
+  body.ag-page-eightwest main > figure:first-of-type {
+    margin-top: 22px !important;
+  }
+
+  body.ag-page-signal main > figure:first-of-type img,
+  body.ag-page-election main > figure:first-of-type img,
+  body.ag-page-audience main > figure:first-of-type img,
+  body.ag-page-newsroom main > figure:first-of-type img,
+  body.ag-page-miami main > figure:first-of-type img,
+  body.ag-page-eightwest main > figure:first-of-type img {
+    width: 100%;
+    min-height: 240px;
+    object-fit: cover;
+  }
+
+  body.ag-page-election main > figure:first-of-type img,
+  body.ag-page-signal main > figure:first-of-type img {
+    object-position: top;
+  }
+}
+
 @media (max-width: 700px) {
   :root {
     --ag-mobile-pad: 18px;
