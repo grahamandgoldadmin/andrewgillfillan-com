@@ -98,61 +98,55 @@ body.ag-page-data .ag-tracker-gallery {
   }
 }
 
-/* Final small-screen composition fixes: keep proof imagery deliberately fanned,
+/* Final small-screen composition fixes: keep proof imagery in a clean editorial grid,
    keep work cards within one viewport, and let the About story read vertically. */
 @media (max-width: 700px) {
   body.ag-page-home .ag-mobile-proof-stack {
-    position: relative !important;
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
     width: 100% !important;
     max-width: none !important;
-    height: 282px !important;
+    height: auto !important;
     margin: 18px 0 0 !important;
     padding: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   body.ag-page-home .ag-mobile-proof-card,
   body.ag-page-home .ag-mobile-proof-card:nth-child(even) {
-    position: absolute !important;
+    position: relative !important;
+    inset: auto !important;
     flex: none !important;
     margin: 0 !important;
-    border: 5px solid #fff !important;
-    background: #fff;
-    box-shadow: 0 14px 34px rgba(20, 18, 15, .18) !important;
+    width: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    transform: none !important;
+    border: 0 !important;
+    background: #14120f;
+    box-shadow: none !important;
     overflow: hidden;
   }
 
-  body.ag-page-home .ag-mobile-proof-card--eightwest {
-    inset: 26px auto auto 3% !important;
-    width: 45% !important;
-    aspect-ratio: 1.5 / 1 !important;
-    transform: rotate(-7deg) !important;
-    z-index: 1;
+  body.ag-page-home .ag-mobile-proof-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  body.ag-page-home .ag-mobile-proof-card--otr {
-    inset: 19px 3% auto auto !important;
-    width: 46% !important;
-    aspect-ratio: 1.5 / 1 !important;
-    transform: rotate(7deg) !important;
-    z-index: 2;
-  }
-
-  body.ag-page-home .ag-mobile-proof-card--miami {
-    inset: 93px auto auto 14% !important;
-    width: 69% !important;
-    aspect-ratio: 1.805 / 1 !important;
-    transform: rotate(-1.5deg) !important;
-    z-index: 3;
-  }
-
-  body.ag-page-home .ag-mobile-proof-card--fire {
-    inset: 168px 4% auto auto !important;
-    width: 45% !important;
-    aspect-ratio: 1.805 / 1 !important;
-    transform: rotate(5deg) !important;
-    z-index: 4;
+  body.ag-page-home .ag-mobile-proof-card figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px 8px 7px;
+    background: linear-gradient(to bottom, transparent, rgba(20, 18, 15, .88));
+    color: #fff;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    line-height: 1.25;
+    text-transform: uppercase;
   }
 
   body.ag-page-home .ag-home-selected-grid {
@@ -224,6 +218,98 @@ body.ag-page-data .ag-tracker-gallery {
     width: 100%;
     margin-top: 4px;
   }
+}
+
+/* Launch review: the mobile career proof is a straight, labeled grid. */
+@media (max-width: 700px) {
+  body.ag-page-home .ag-mobile-proof-stack {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 18px 0 0 !important;
+    overflow: visible !important;
+  }
+
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card:nth-child(even),
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--eightwest,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--otr,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--miami,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--fire {
+    position: relative !important;
+    inset: auto !important;
+    width: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 0 !important;
+    transform: none !important;
+    border: 0 !important;
+    background: #14120f !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Career previews use consistent crops and labels instead of overlapping cards. */
+.ag-home-career-images {
+  display: grid;
+  grid-template-columns: 1.45fr .55fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background: #f2efe9;
+}
+
+.ag-home-career-images img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ag-home-career-images img:first-child { grid-row: 1 / 3; }
+
+.ag-audience-frontdoor-crop {
+  height: clamp(520px, 58vw, 820px);
+  overflow: hidden;
+  background: #f2efe9;
+  padding: clamp(11px, 1.2vw, 22px);
+  border: 1px solid rgba(20, 18, 15, .16);
+}
+
+.ag-audience-frontdoor-crop img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(20, 18, 15, .10);
+  box-shadow: 0 1px 4px rgba(20, 18, 15, .08);
+}
+
+.ag-newsroom-voices-collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f2efe9;
+  border: 1px solid rgba(20, 18, 15, .14);
+}
+
+.ag-newsroom-voices-collage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media (max-width: 700px) {
+  .ag-audience-frontdoor-crop { height: 560px; }
+  .ag-newsroom-voices-collage { aspect-ratio: 4 / 5; }
 }
 
 /* Desktop home proof strip: authentic work appears immediately after the hero. */
@@ -560,7 +646,7 @@ body.ag-page-data .ag-tracker-gallery {
     overscroll-behavior-inline: contain;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-    font-size: 10px !important;
+    font-size: 11px !important;
     letter-spacing: .065em !important;
   }
 
@@ -724,10 +810,7 @@ body.ag-page-data .ag-tracker-gallery {
     text-transform: uppercase;
   }
 
-  body.ag-page-home .ag-mobile-proof-card--eightwest::after { content: 'Original products'; }
-  body.ag-page-home .ag-mobile-proof-card--otr::after { content: 'Public media'; }
-  body.ag-page-home .ag-mobile-proof-card--miami::after { content: 'Newsroom leadership'; }
-  body.ag-page-home .ag-mobile-proof-card--fire::after { content: 'Breaking news'; }
+  body.ag-page-home .ag-mobile-proof-card::after { content: none; }
 
   body.ag-page-home .ag-mobile-proof-wall > p:last-child {
     margin-inline: var(--ag-mobile-pad) !important;
@@ -1210,12 +1293,12 @@ body.ag-page-data .ag-tracker-gallery {
 
   .ag-primary-nav {
     justify-content: flex-start !important;
-    gap: 23px !important;
+    gap: 21px !important;
     overflow-x: auto !important;
     overscroll-behavior-inline: contain;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-    font-size: 10px !important;
+    font-size: 11px !important;
     letter-spacing: .065em !important;
   }
 
@@ -1236,6 +1319,16 @@ body.ag-page-data .ag-tracker-gallery {
   figcaption {
     font-size: 11px !important;
     line-height: 1.45 !important;
+  }
+
+  .ag-mobile-swipe-cue {
+    margin: 13px 0 0 !important;
+    color: #a32a19 !important;
+    font-size: 10.5px !important;
+    font-weight: 600;
+    letter-spacing: .085em;
+    line-height: 1.4;
+    text-transform: uppercase;
   }
 
   /* A mobile page does not need a second pager or a duplicate Site directory. */
@@ -1764,57 +1857,35 @@ body.ag-page-data .ag-tracker-gallery {
 /* Final responsive composition layer. */
 @media (max-width: 700px) {
   body.ag-page-home .ag-mobile-proof-stack {
-    position: relative !important;
-    display: block !important;
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 5px !important;
     width: 100% !important;
     max-width: none !important;
-    height: 282px !important;
+    height: auto !important;
     margin: 18px 0 0 !important;
     padding: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
-  body.ag-page-home .ag-mobile-proof-card,
-  body.ag-page-home .ag-mobile-proof-card:nth-child(even) {
-    position: absolute !important;
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card:nth-child(even),
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--eightwest,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--otr,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--miami,
+  body.ag-page-home .ag-mobile-proof-stack > .ag-mobile-proof-card--fire {
+    position: relative !important;
+    inset: auto !important;
     flex: none !important;
     margin: 0 !important;
-    border: 5px solid #fff !important;
-    background: #fff;
-    box-shadow: 0 14px 34px rgba(20, 18, 15, .18) !important;
+    width: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    transform: none !important;
+    border: 0 !important;
+    background: #14120f !important;
+    box-shadow: none !important;
     overflow: hidden;
-  }
-
-  body.ag-page-home .ag-mobile-proof-card--eightwest {
-    inset: 26px auto auto 3% !important;
-    width: 45% !important;
-    aspect-ratio: 1.5 / 1 !important;
-    transform: rotate(-7deg) !important;
-    z-index: 1;
-  }
-
-  body.ag-page-home .ag-mobile-proof-card--otr {
-    inset: 19px 3% auto auto !important;
-    width: 46% !important;
-    aspect-ratio: 1.5 / 1 !important;
-    transform: rotate(7deg) !important;
-    z-index: 2;
-  }
-
-  body.ag-page-home .ag-mobile-proof-card--miami {
-    inset: 93px auto auto 14% !important;
-    width: 69% !important;
-    aspect-ratio: 1.805 / 1 !important;
-    transform: rotate(-1.5deg) !important;
-    z-index: 3;
-  }
-
-  body.ag-page-home .ag-mobile-proof-card--fire {
-    inset: 168px 4% auto auto !important;
-    width: 45% !important;
-    aspect-ratio: 1.805 / 1 !important;
-    transform: rotate(5deg) !important;
-    z-index: 4;
   }
 
   body.ag-page-home .ag-home-selected-grid {
