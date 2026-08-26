@@ -151,6 +151,67 @@ export function initSectionNav() {
   targets.forEach((t) => io.observe(t));
 }
 
+export function initStickyMobilePrimaryNav() {
+  const header = document.querySelector('body > header');
+  const shell = header && header.querySelector('.ag-primary-nav-shell');
+  const nav = shell && shell.querySelector('.ag-primary-nav');
+  const brand = shell && shell.querySelector(':scope > a');
+  if (!header || !shell || !nav || !brand || header.querySelector('.ag-mobile-menu-toggle')) return;
+
+  const mobile = window.matchMedia('(max-width: 700px)');
+  const button = document.createElement('button');
+  const navId = nav.id || 'ag-primary-nav';
+  nav.id = navId;
+  button.type = 'button';
+  button.className = 'ag-mobile-menu-toggle';
+  button.setAttribute('aria-controls', navId);
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-label', 'Open menu');
+  button.innerHTML = '<span>Menu</span><span class="ag-mobile-menu-icon" aria-hidden="true"></span>';
+  brand.insertAdjacentElement('afterend', button);
+  header.classList.add('ag-mobile-nav-ready');
+
+  const setOpen = (open, returnFocus = false) => {
+    const next = Boolean(open && mobile.matches && header.classList.contains('ag-mobile-nav-compact'));
+    header.classList.toggle('ag-mobile-nav-open', next);
+    button.setAttribute('aria-expanded', String(next));
+    button.setAttribute('aria-label', next ? 'Close menu' : 'Open menu');
+    if (!next && returnFocus) button.focus();
+  };
+
+  const sync = () => {
+    const compact = mobile.matches && window.scrollY > 72;
+    header.classList.toggle('ag-mobile-nav-compact', compact);
+    if (!compact) setOpen(false);
+  };
+
+  button.addEventListener('click', () => {
+    setOpen(button.getAttribute('aria-expanded') !== 'true');
+  });
+  nav.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('click', (event) => {
+    if (header.classList.contains('ag-mobile-nav-open') && !header.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && header.classList.contains('ag-mobile-nav-open')) setOpen(false, true);
+  });
+
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      sync();
+      scrollTicking = false;
+    });
+  }, { passive: true });
+  if (typeof mobile.addEventListener === 'function') mobile.addEventListener('change', sync);
+  else if (typeof mobile.addListener === 'function') mobile.addListener(sync);
+  sync();
+}
+
 export function initMobilePrimaryNavPosition() {
   if (!window.matchMedia('(max-width: 700px)').matches) return;
   const nav = document.querySelector('.ag-primary-nav');
@@ -190,5 +251,6 @@ export function initAll() {
   initLightbox();
   initBackToTop();
   initSectionNav();
+  initStickyMobilePrimaryNav();
   initMobilePrimaryNavPosition();
 }
