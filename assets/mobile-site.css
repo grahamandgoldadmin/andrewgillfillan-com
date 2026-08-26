@@ -53,26 +53,95 @@ img {
   }
 }
 
-/* Portfolio proof sequence: current products first, origin story next, Headliners last. */
+/* Portfolio sequence: origin story, independent innovation, then the current body of work. */
 .ag-work-index {
   display: flex;
   flex-direction: column;
 }
 
-.ag-work-index > a[href="the-signal.html"],
-.ag-home-selected-grid > a[href="the-signal.html"] { order: 1; }
-.ag-work-index > a[href="election-2026.html"],
-.ag-home-selected-grid > a[href="election-2026.html"] { order: 2; }
 .ag-work-index > a[href="eightwest.html"],
-.ag-home-selected-grid > a[href="eightwest.html"] { order: 3; }
-.ag-work-index > a[href="audience-growth.html"],
-.ag-home-selected-grid > a[href="audience-growth.html"] { order: 4; }
-.ag-work-index > a[href="newsroom.html"],
-.ag-home-selected-grid > a[href="newsroom.html"] { order: 5; }
+.ag-home-selected-grid > a[href="eightwest.html"] { order: 1; }
 .ag-work-index > a[href="data-ai-systems.html"],
-.ag-home-selected-grid > a[href="data-ai-systems.html"] { order: 6; }
+.ag-home-selected-grid > a[href="data-ai-systems.html"] { order: 2; }
+.ag-work-index > a[href="the-signal.html"],
+.ag-home-selected-grid > a[href="the-signal.html"] { order: 3; }
+.ag-work-index > a[href="election-2026.html"],
+.ag-home-selected-grid > a[href="election-2026.html"] { order: 4; }
+.ag-work-index > a[href="audience-growth.html"],
+.ag-home-selected-grid > a[href="audience-growth.html"] { order: 5; }
+.ag-work-index > a[href="newsroom.html"],
+.ag-home-selected-grid > a[href="newsroom.html"] { order: 6; }
 .ag-work-index > a[href="miami-stream.html"],
 .ag-home-selected-grid > a[href="miami-stream.html"] { order: 7; }
+
+.ag-work-index > a {
+  position: relative;
+  isolation: isolate;
+}
+
+.ag-work-index > a > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ag-work-index h2 {
+  transition: color .22s ease;
+}
+
+.ag-work-case-cta {
+  display: inline-flex;
+  align-items: center;
+  margin: 26px 0 0 !important;
+  padding: 13px 17px;
+  background: #a32a19;
+  color: #fff !important;
+  box-shadow: 0 8px 22px rgba(163, 42, 25, .2);
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: .1em !important;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: background .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+
+@media (min-width: 701px) {
+  .ag-work-index > a::before {
+    content: "";
+    position: absolute;
+    inset: 10px -22px;
+    z-index: 0;
+    background: #f7f5f1;
+    opacity: 0;
+    transform: scale(.992);
+    transition: opacity .22s ease, transform .22s ease;
+  }
+
+  .ag-work-index > a:hover::before,
+  .ag-work-index > a:focus-visible::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .ag-work-index > a:hover h2,
+  .ag-work-index > a:focus-visible h2 {
+    color: #a32a19;
+  }
+
+  .ag-work-index > a:hover .ag-work-case-cta,
+  .ag-work-index > a:focus-visible .ag-work-case-cta {
+    background: #14120f;
+    box-shadow: 0 10px 26px rgba(20, 18, 15, .2);
+    transform: translateX(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ag-work-index > a::before,
+  .ag-work-index h2,
+  .ag-work-case-cta {
+    transition: none;
+  }
+}
 
 .ag-home-selected-grid > a::after {
   content: "View case study  →";
@@ -88,12 +157,12 @@ img {
   text-transform: uppercase;
 }
 
-footer a[href="the-signal.html"] { order: 1; }
-footer a[href="election-2026.html"] { order: 2; }
-footer a[href="eightwest.html"] { order: 3; }
-footer a[href="audience-growth.html"] { order: 4; }
-footer a[href="newsroom.html"] { order: 5; }
-footer a[href="data-ai-systems.html"] { order: 6; }
+footer a[href="eightwest.html"] { order: 1; }
+footer a[href="data-ai-systems.html"] { order: 2; }
+footer a[href="the-signal.html"] { order: 3; }
+footer a[href="election-2026.html"] { order: 4; }
+footer a[href="audience-growth.html"] { order: 5; }
+footer a[href="newsroom.html"] { order: 6; }
 footer a[href="miami-stream.html"] { order: 7; }
 
 .ag-page-data .ag-data-maps > * {
@@ -1162,7 +1231,9 @@ body.ag-page-home .ag-home-career-band {
   }
 
   body.ag-page-work main > section:nth-of-type(2) > a > div:has(h2) > p:last-child {
-    display: block !important;
+    display: inline-flex !important;
+    width: max-content;
+    max-width: 100%;
     margin-top: 16px !important;
   }
 
@@ -1178,7 +1249,7 @@ body.ag-page-home .ag-home-career-band {
     line-height: 1.42 !important;
   }
 
-  body.ag-page-work main > section:nth-of-type(2) > a:not(:last-child) {
+  body.ag-page-work main > section:nth-of-type(2) > a:not([href="miami-stream.html"]) {
     padding-bottom: 32px !important;
     border-bottom: 1px solid rgba(20, 18, 15, .14) !important;
   }
@@ -1639,7 +1710,7 @@ body.ag-page-home .ag-home-career-band {
     padding: 28px 0 !important;
   }
 
-  .ag-page-home .ag-home-selected-grid > a:nth-child(n + 4) {
+  .ag-page-home .ag-home-selected-grid > a:not([href="eightwest.html"]):not([href="data-ai-systems.html"]):not([href="the-signal.html"]) {
     display: none !important;
   }
 
