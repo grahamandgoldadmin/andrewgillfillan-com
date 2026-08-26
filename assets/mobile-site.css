@@ -1710,7 +1710,7 @@ body.ag-page-home .ag-home-career-band {
     padding: 28px 0 !important;
   }
 
-  .ag-page-home .ag-home-selected-grid > a:not([href="eightwest.html"]):not([href="data-ai-systems.html"]):not([href="the-signal.html"]) {
+  .ag-page-home .ag-home-selected-grid > a:not([href="eightwest.html"]):not([href="data-ai-systems.html"]):not([href="the-signal.html"]):not([href="election-2026.html"]) {
     display: none !important;
   }
 
