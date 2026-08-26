@@ -1,6 +1,52 @@
 /* Mobile editorial pass. Desktop presentation is intentionally untouched. */
+
+/* Images carry intrinsic width/height attributes so the browser can reserve
+   space and avoid layout shift. Those attributes act as presentational hints,
+   which would otherwise cancel any CSS aspect-ratio. This restores height:auto
+   at the lowest possible specificity, so every class rule and inline style
+   still wins. */
+img {
+  height: auto;
+}
 .ag-mobile-only {
   display: none !important;
+}
+
+@media (max-width: 700px) {
+  body.ag-page-wkar .ag-wkar-plan {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+    overflow-x: hidden;
+    padding-top: 36px !important;
+  }
+
+  body.ag-page-wkar .ag-wkar-plan > div:first-child {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.ag-page-wkar .ag-wkar-plan-grid {
+    display: flex !important;
+    gap: 14px !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--ag-mobile-pad);
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--ag-mobile-pad));
+    padding-inline: var(--ag-mobile-pad);
+    padding-bottom: 10px;
+  }
+
+  body.ag-page-wkar .ag-wkar-plan-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.ag-page-wkar .ag-wkar-plan-grid figure,
+  body.ag-page-wkar .ag-wkar-plan-grid .ag-wkar-plan-lead {
+    flex: 0 0 82vw;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
 }
 
 /* Portfolio proof sequence: current products first, origin story next, Headliners last. */
@@ -94,7 +140,25 @@ footer a[href="miami-stream.html"] { order: 7; }
   }
 
 body.ag-page-data .ag-tracker-gallery {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    padding: 0 var(--ag-mobile-pad) 14px !important;
+    margin-inline: calc(var(--ag-mobile-pad) * -1) !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.ag-page-data .ag-tracker-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.ag-page-data .ag-tracker-gallery > figure {
+    flex: 0 0 82vw;
+    min-width: 0;
+    scroll-snap-align: center;
   }
 }
 
@@ -155,7 +219,9 @@ body.ag-page-data .ag-tracker-gallery {
 
   body.ag-page-home main .ag-home-selected-work .ag-home-selected-grid > a,
   body.ag-page-home main .ag-home-selected-work .ag-home-selected-grid > a:nth-child(n + 4) {
-    flex-basis: calc(100vw - (2 * var(--ag-mobile-pad))) !important;
+    /* Full width left only a 5px sliver of the next card, so the rail did not
+       read as swipeable. 82vw matches every other rail on the site. */
+    flex-basis: 82vw !important;
     scroll-snap-align: start;
   }
 
@@ -198,10 +264,35 @@ body.ag-page-data .ag-tracker-gallery {
     padding: 22px 2px 0 !important;
   }
 
+  /* The card rules below always assumed a flex rail, but the container rule that
+     makes one was missing, so the eyebrow promised a swipe over a plain stack. */
+  body.ag-page-wkar .ag-wkar-operating-change {
+    overflow: hidden;
+  }
+
+  body.ag-page-wkar .ag-wkar-operating-change .ag-wkar-systems-grid {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    padding: 1px var(--ag-mobile-pad) 16px !important;
+    margin-inline: calc(var(--ag-mobile-pad) * -1) !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    background: transparent !important;
+  }
+
+  body.ag-page-wkar .ag-wkar-operating-change .ag-wkar-systems-grid::-webkit-scrollbar {
+    display: none;
+  }
+
   body.ag-page-wkar .ag-wkar-operating-change .ag-wkar-systems-grid > .ag-wkar-system-card {
-    flex-basis: calc(100vw - (2 * var(--ag-mobile-pad))) !important;
+    flex: 0 0 82vw !important;
+    min-width: 0;
+    border: 1px solid rgba(20, 18, 15, .14);
     background: var(--ag-mobile-card) !important;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
   }
 
   body.ag-page-wkar .ag-wkar-operating-change .ag-wkar-systems-grid > .ag-wkar-system-card:first-child > p {
@@ -218,6 +309,16 @@ body.ag-page-data .ag-tracker-gallery {
     width: 100%;
     margin-top: 4px;
   }
+}
+
+/* The homepage already proves this work in the selected-work grid and detail pages. */
+body.ag-page-home .ag-home-redundant-timeline,
+body.ag-page-home .ag-home-redundant-audience-card,
+body.ag-page-home .ag-home-redundant-wkar-summary,
+body.ag-page-home .ag-home-redundant-audience-summary,
+body.ag-page-home .ag-home-career-teaser,
+body.ag-page-home .ag-home-career-band {
+  display: none !important;
 }
 
 /* Launch review: the mobile career proof is a straight, labeled grid. */
@@ -267,10 +368,31 @@ body.ag-page-data .ag-tracker-gallery {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #14120f;
 }
 
 .ag-home-career-images img:first-child { grid-row: 1 / 3; }
+
+@media (max-width: 700px) {
+  .ag-mobile-proof-card img {
+    object-fit: contain !important;
+    background: #14120f;
+  }
+}
+
+/* Product screens and group photographs must remain legible, not fill a box by cropping. */
+.ag-product-collage img {
+  object-fit: contain !important;
+  background: #fff;
+}
+
+.ag-desktop-hero-collage figure:not(.ag-desktop-hero-headshot) img,
+.ag-newsroom-hero-image figure:first-child img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #f7f5f1;
+}
 
 .ag-audience-frontdoor-crop {
   height: clamp(520px, 58vw, 820px);
@@ -303,8 +425,9 @@ body.ag-page-data .ag-tracker-gallery {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top;
+  background: #f7f5f1;
 }
 
 @media (max-width: 700px) {
@@ -588,8 +711,9 @@ body.ag-page-data .ag-tracker-gallery {
   height: 100% !important;
   min-height: 0 !important;
   aspect-ratio: auto !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   object-position: top center !important;
+  background: #f7f5f1 !important;
   border: 0 !important;
 }
 
@@ -609,6 +733,7 @@ body.ag-page-data .ag-tracker-gallery {
 }
 
 .ag-signal-collage > span {
+  display: none !important;
   position: absolute;
   left: 10px;
   bottom: 10px;
@@ -622,6 +747,10 @@ body.ag-page-data .ag-tracker-gallery {
   letter-spacing: .09em;
   line-height: 1.35;
   text-transform: uppercase;
+}
+
+.ag-product-collage > span {
+  display: none !important;
 }
 
 /*
@@ -1108,11 +1237,11 @@ body.ag-page-data .ag-tracker-gallery {
     grid-column: 1 / -1;
   }
 
-  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal] h3 {
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal] h2 {
     font-size: 30px !important;
   }
 
-  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(even) h3,
+  body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(even) h2,
   body.ag-page-pov main > section:nth-of-type(2) > div[data-reveal]:nth-of-type(even) p {
     color: #fbfaf8 !important;
   }
@@ -1783,8 +1912,9 @@ body.ag-page-data .ag-tracker-gallery {
   .ag-page-signal .ag-signal-edition-gallery img,
   .ag-page-signal .ag-signal-plus-gallery img {
     max-height: 300px !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: top !important;
+    background: #f7f5f1 !important;
   }
 
   .ag-page-newsroom #front-door > p {
@@ -1796,11 +1926,14 @@ body.ag-page-data .ag-tracker-gallery {
   }
 
   .ag-page-election #promise .ag-election-promise-grid > div p:last-child {
-    display: none !important;
+    display: block !important;
+    margin-top: 8px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
   }
 
   .ag-page-election #promise .ag-election-promise-grid > div {
-    padding: 13px 0 !important;
+    padding: 13px 0 16px !important;
   }
 
   .ag-page-election #promise .ag-election-promise-grid {
@@ -1874,12 +2007,140 @@ body.ag-page-data .ag-tracker-gallery {
   }
 
   body.ag-page-data .ag-tracker-gallery {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    padding: 0 var(--ag-mobile-pad) 14px !important;
+    margin-inline: calc(var(--ag-mobile-pad) * -1) !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body.ag-page-data .ag-tracker-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.ag-page-data .ag-tracker-gallery > figure {
+    flex: 0 0 82vw;
+    min-width: 0;
+    scroll-snap-align: center;
   }
 }
 
 /* Final responsive composition layer. */
 @media (max-width: 700px) {
+  html { scroll-padding-top: 18px; }
+  [id] { scroll-margin-top: 18px; }
+  body > header { position: relative !important; top: auto !important; }
+
+  body .ag-primary-nav-shell {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+    padding: 10px var(--ag-mobile-pad) 8px !important;
+  }
+
+  body .ag-primary-nav-shell > a {
+    width: 100% !important;
+    min-height: 40px !important;
+  }
+
+  body .ag-primary-nav {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 10px !important;
+    overflow: visible !important;
+    font-size: 10px !important;
+    letter-spacing: .055em !important;
+  }
+
+  body .ag-primary-nav a {
+    display: flex !important;
+    justify-content: center;
+    min-width: 0 !important;
+    min-height: 34px !important;
+    padding: 8px 0 6px !important;
+    text-align: center;
+  }
+
+  html body.ag-page-home main .ag-home-selected-work .ag-home-selected-grid > a.ag-home-redundant-audience-card {
+    display: none !important;
+  }
+
+  body.ag-page-home .ag-home-primary-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px !important;
+    width: 100%;
+  }
+
+  body.ag-page-home .ag-home-primary-actions > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 10px !important;
+    text-align: center;
+  }
+
+  body.ag-page-home .ag-home-primary-actions > a:first-child { grid-column: 1 / -1; }
+
+  body.ag-page-wkar .ag-wkar-hero-collage {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    height: auto !important;
+    padding-top: 8px;
+  }
+
+  body.ag-page-wkar .ag-wkar-hero-collage figure {
+    position: relative !important;
+    inset: auto !important;
+    display: grid;
+    grid-template-rows: auto auto;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    border: 1px solid rgba(20, 18, 15, .14) !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  body.ag-page-wkar .ag-wkar-hero-collage-team { grid-column: 1 / -1; }
+
+  body.ag-page-wkar .ag-wkar-hero-collage img {
+    width: 100%;
+    height: 170px !important;
+    object-fit: contain;
+    object-position: center;
+    background: #f7f5f1;
+  }
+
+  body.ag-page-wkar .ag-wkar-hero-collage-team img { height: 210px !important; }
+
+  body.ag-page-wkar .ag-wkar-hero-collage figcaption {
+    position: static !important;
+    padding: 9px 10px 10px !important;
+    background: #f7f5f1 !important;
+    color: #39332c !important;
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+  }
+
+  body.ag-page-wkar .ag-wkar-visible-team > div:first-child {
+    grid-template-columns: minmax(0, 1fr) !important;
+    align-items: start !important;
+  }
+
   body.ag-page-home .ag-mobile-proof-stack {
     position: static !important;
     display: grid !important;
@@ -1918,7 +2179,9 @@ body.ag-page-data .ag-tracker-gallery {
 
   body.ag-page-home main .ag-home-selected-work .ag-home-selected-grid > a,
   body.ag-page-home main .ag-home-selected-work .ag-home-selected-grid > a:nth-child(n + 4) {
-    flex-basis: calc(100vw - (2 * var(--ag-mobile-pad))) !important;
+    /* Full width left only a 5px sliver of the next card, so the rail did not
+       read as swipeable. 82vw matches every other rail on the site. */
+    flex-basis: 82vw !important;
     scroll-snap-align: start;
   }
 
@@ -1961,11 +2224,6 @@ body.ag-page-data .ag-tracker-gallery {
     padding: 22px 2px 0 !important;
   }
 
-  body.ag-page-wkar .ag-wkar-operating-change .ag-wkar-systems-grid > .ag-wkar-system-card {
-    flex-basis: calc(100vw - (2 * var(--ag-mobile-pad))) !important;
-    background: var(--ag-mobile-card) !important;
-    scroll-snap-align: start;
-  }
 
   body.ag-page-wkar .ag-wkar-operating-change .ag-wkar-systems-grid > .ag-wkar-system-card:first-child > p {
     color: #39332c !important;

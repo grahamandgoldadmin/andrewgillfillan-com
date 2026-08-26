@@ -7,17 +7,21 @@ export function initReveal() {
   const items = Array.from(document.querySelectorAll('[data-reveal]'));
   if (!items.length) return;
   if (REDUCED() || window.matchMedia('(max-width: 700px)').matches || !('IntersectionObserver' in window)) return;
-  items.forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(14px)';
-    el.style.transition = 'opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1)';
-    el.style.transitionDelay = Math.min(i % 4, 3) * 70 + 'ms';
-  });
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'none';
+      const index = items.indexOf(e.target);
+      if (typeof e.target.animate === 'function') {
+        e.target.animate([
+          { opacity: 0, transform: 'translateY(14px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ], {
+          duration: 700,
+          delay: Math.min(index % 4, 3) * 70,
+          easing: 'cubic-bezier(.22,.61,.36,1)',
+          fill: 'none'
+        });
+      }
       io.unobserve(e.target);
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
@@ -156,9 +160,33 @@ export function initMobilePrimaryNavPosition() {
   nav.scrollTo({ left, behavior: 'auto' });
 }
 
+export function initBars() {
+  const bars = Array.from(document.querySelectorAll('[data-bar]'));
+  if (!bars.length) return;
+  // Widths are already correct in the markup, so the chart renders without JS.
+  // This only animates them in from zero when they scroll into view.
+  if (REDUCED() || !('IntersectionObserver' in window) || typeof Element === 'undefined') return;
+  const targets = bars.map((el) => ({ el, w: el.style.width }));
+  targets.forEach(({ el }) => { el.style.width = '0%'; });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const t = targets.find((x) => x.el === e.target);
+      if (t) {
+        e.target.style.transition = 'width 1.1s cubic-bezier(.33,.9,.32,1)';
+        requestAnimationFrame(() => { t.el.style.width = t.w; });
+      }
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25 });
+  bars.forEach((b) => io.observe(b));
+}
+
 export function initAll() {
+
   initReveal();
   initChartDraw();
+  initBars();
   initLightbox();
   initBackToTop();
   initSectionNav();
