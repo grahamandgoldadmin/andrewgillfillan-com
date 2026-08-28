@@ -290,6 +290,10 @@ body.ag-page-data .ag-tracker-gallery {
     scroll-padding-inline: var(--ag-mobile-pad);
   }
 
+  body.ag-page-home .ag-mobile-proof-card figcaption {
+    display: none !important;
+  }
+
   body.ag-page-home main .ag-home-selected-work .ag-home-selected-grid > a,
   body.ag-page-home main .ag-home-selected-work .ag-home-selected-grid > a:nth-child(n + 4) {
     /* Full width left only a 5px sliver of the next card, so the rail did not
