@@ -24,8 +24,8 @@ Andrew is about more than publishing news. He builds content people want to see,
 ## Selected work
 
 - [Editorial product portfolio](https://www.andrewgillfillan.com/work.html): seven documented case studies.
-- [The Sunday Signal and Signal+](https://www.andrewgillfillan.com/the-signal.html): audience need, product concept, newsletter architecture, newsroom workflow and original-send performance. Sunday Signal launched February 1, 2026; Signal+ launched July 29, 2026. Resends are excluded from published performance counts.
-- [Election 2026](https://www.andrewgillfillan.com/election-2026.html): dedicated election destination, service tools, content architecture and local politics coverage.
+- [The Sunday Signal and Signal+](https://www.andrewgillfillan.com/the-signal.html): audience need, product concept, newsletter architecture, newsroom workflow and original-send performance. Sunday Signal launched February 1, 2026; Signal+ launched July 29, 2026. Resends are excluded from published performance counts. Through November 1, 2026: 40 Sunday sends at 56.3% opens and 9.2% clicks; 15 Signal+ sends at 56.3% opens and 5.6% clicks (Mailchimp, bot-filtered).
+- [Election 2026](https://www.andrewgillfillan.com/election-2026.html): dedicated election destination, service tools, content architecture and local politics coverage, including the November 3, 2026 Election Night homepage takeover, AP results, Instagram field video and morning-after coverage.
 - [eightWest](https://www.andrewgillfillan.com/eightwest.html): a commercial daily lifestyle and entertainment show Andrew conceived and built at WOOD TV8; launched October 5, 2009 and still on the air.
 - [Digital audience growth](https://www.andrewgillfillan.com/audience-growth.html): analytics-led platform, timing and distribution strategy at WKAR.
 - [Newsroom leadership](https://www.andrewgillfillan.com/newsroom.html): hiring, coaching, visible talent, capacity and editorial ownership.
