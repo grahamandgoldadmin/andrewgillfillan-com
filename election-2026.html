@@ -75,7 +75,16 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 .ag-hover-27:hover{color:#fff}
 .ag-hover-28:hover{color:#fff}
 .ag-hover-29:hover{color:#fff}
-.ag-after-1::after{content:''; position:absolute; right:0; top:1px; bottom:1px; width:clamp(0px,4vw,34px); pointer-events:none; background:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,.96))}</style></head>
+.ag-after-1::after{content:''; position:absolute; right:0; top:1px; bottom:1px; width:clamp(0px,4vw,34px); pointer-events:none; background:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,.96))}
+.ag-hero-rot{position:relative; width:100%; aspect-ratio:1240/286; overflow:hidden; background:#14120F; border:1px solid rgba(20,18,15,.14)}
+.ag-hero-rot img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; animation:agHeroFade 15s infinite}
+.ag-hero-rot img:nth-child(2){animation-delay:5s}.ag-hero-rot img:nth-child(3){animation-delay:10s}
+@keyframes agHeroFade{0%{opacity:0}4%{opacity:1}33%{opacity:1}37%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.ag-hero-rot img{animation:none}.ag-hero-rot img:first-child{opacity:1}}
+.ag-hero-rot-dots{display:flex; gap:6px}.ag-hero-rot-dots i{display:block; width:18px; height:3px; background:rgba(20,18,15,.18); animation:agHeroDot 15s infinite}
+.ag-hero-rot-dots i:nth-child(2){animation-delay:5s}.ag-hero-rot-dots i:nth-child(3){animation-delay:10s}
+@keyframes agHeroDot{0%,33%{background:#A32A19}37%,100%{background:rgba(20,18,15,.18)}}
+@media (prefers-reduced-motion:reduce){.ag-hero-rot-dots{display:none}}</style></head>
 <body class="ag-page-election">
 <header style="position:sticky; top:0; z-index:800; background:rgba(255,255,255,.94); backdrop-filter:saturate(140%) blur(8px); -webkit-backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid rgba(20,18,15,.14);">
 <a class="ag-skip-link" href="#main" style="position:absolute; left:-9999px; top:0; background:#14120F; color:#fff; padding:10px 16px; font-size:12px; letter-spacing:.08em; text-transform:uppercase;">Skip to content</a>
@@ -97,6 +106,14 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 <div class="ag-page-meta" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 28px; padding-bottom:14px; border-bottom:1px solid rgba(20,18,15,.14); font-size:11.5px; font-weight:500; letter-spacing:.09em; text-transform:uppercase; color:#5D564D;">
 <span>Case study 04</span><span>Strategy · Prototype · Editorial differentiation</span><span>wkar.org/election-2026</span>
 </div>
+<figure data-reveal="" style="margin:clamp(22px,2.6vw,36px) 0 0;">
+<div class="ag-hero-rot">
+<img alt="Election 2026 homepage hero on wkar.org featuring the Off the Record set" decoding="async" fetchpriority="high" src="assets/election-night/hero-off-the-record.jpg" width="1240" height="286"/>
+<img alt="Election 2026 homepage hero on wkar.org featuring the WKAR politics team" decoding="async" src="assets/election-night/hero-politics-team.jpg" width="1240" height="286"/>
+<img alt="Election 2026 homepage hero on wkar.org reading Your team. Your vote. In depth." decoding="async" src="assets/election-night/hero-in-depth.jpg" width="1240" height="286"/>
+</div>
+<figcaption style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 24px; margin-top:12px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;"><span>Election Night on wkar.org · three rotating hero designs, one identity · November 3–4, 2026</span><span aria-hidden="true" class="ag-hero-rot-dots"><i></i><i></i><i></i></span></figcaption>
+</figure>
 <div style="display:flex; flex-wrap:wrap; gap:clamp(30px,4.4vw,80px); padding:clamp(34px,4.6vw,76px) 0 clamp(28px,3.4vw,52px);">
 <div style="flex:3 1 480px; min-width:0;">
 <p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">From the WKAR News 2026 strategic plan</p>
@@ -204,17 +221,11 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 <p style="margin:0; font-size:12px; font-weight:600; letter-spacing:.11em; text-transform:uppercase; color:#A32A19;">Election Night · November 3–4, 2026</p>
 <h2 style="margin:12px 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(30px,3.4vw,52px); line-height:1.04; letter-spacing:-.02em; max-width:24ch; text-wrap:balance;">The brand carried the whole station through Election Night.</h2>
 </div>
-<p data-reveal="" style="margin:clamp(20px,2.4vw,32px) 0 0; max-width:64ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">Election Night was the test of everything built since the strategic plan. The Election 2026 identity took over the wkar.org homepage, with three rotating hero designs above live AP results for governor and U.S. Senate. It ran across @wkarnews, the Instagram channel we launched ahead of the election to put WKAR News on social media, and it carried into the morning-after edition of The Signal+. Every surface looked like one newsroom covering one story.</p>
+<p data-reveal="" style="margin:clamp(20px,2.4vw,32px) 0 0; max-width:64ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">Election Night was the test of everything built since the strategic plan. The Election 2026 identity took over the wkar.org homepage, with the three rotating hero designs at the top of this page running above live AP results for governor and U.S. Senate. It ran across @wkarnews, the Instagram channel we launched ahead of the election to put WKAR News on social media, and it carried into the morning-after edition of The Signal+. Every surface looked like one newsroom covering one story.</p>
 <figure data-lightbox="The wkar.org homepage on election night, with the Election 2026 identity, Off the Record hero and live AP results" data-reveal="" style="margin:clamp(24px,2.8vw,42px) 0 0;">
 <img alt="The wkar.org homepage led by the Election 2026 identity, an Off the Record hero and live AP results for Michigan governor and U.S. Senate" decoding="async" loading="lazy" src="assets/election-night/homepage-takeover.jpg" style="width:100%; height:auto; border:1px solid rgba(20,18,15,.14);" width="1280" height="1100"/>
 <figcaption style="margin-top:10px; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">wkar.org homepage takeover · AP results · authentic capture, November 4, 2026</figcaption>
 </figure>
-<div data-reveal="" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:clamp(14px,1.6vw,22px); margin-top:clamp(20px,2.2vw,30px);">
-<figure data-lightbox="Homepage hero: Off the Record" style="margin:0;"><img alt="Election 2026 homepage hero featuring the Off the Record set" decoding="async" loading="lazy" src="assets/election-night/hero-off-the-record.jpg" style="width:100%; height:auto; border:1px solid rgba(20,18,15,.14);" width="1240" height="324"/></figure>
-<figure data-lightbox="Homepage hero: the politics team" style="margin:0;"><img alt="Election 2026 homepage hero featuring the WKAR politics team" decoding="async" loading="lazy" src="assets/election-night/hero-politics-team.jpg" style="width:100%; height:auto; border:1px solid rgba(20,18,15,.14);" width="1240" height="324"/></figure>
-<figure data-lightbox="Homepage hero: Your team. Your vote. In depth." style="margin:0;"><img alt="Election 2026 homepage hero reading Your team. Your vote. In depth." decoding="async" loading="lazy" src="assets/election-night/hero-in-depth.jpg" style="width:100%; height:auto; border:1px solid rgba(20,18,15,.14);" width="1240" height="324"/></figure>
-</div>
-<p data-reveal="" style="margin:10px 0 0; font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:#7B7368;">Three rotating hero designs, one identity · talent, the program and the promise</p>
 
 <h3 data-reveal="" style="margin:clamp(40px,4.6vw,68px) 0 0; font-family:'Instrument Serif',Georgia,serif; font-weight:400; font-size:clamp(26px,2.6vw,38px); line-height:1.08; letter-spacing:-.015em; max-width:28ch; text-wrap:balance;">A new channel, ready for the night.</h3>
 <p data-reveal="" style="margin:clamp(14px,1.6vw,22px) 0 0; max-width:64ch; font-size:16px; line-height:1.62; color:#39332C; text-wrap:pretty;">We launched @wkarnews on Instagram before the election to get WKAR News onto social media, and built it around vertical video carrying the Election 2026 brand. On Election Day, reporters filed branded field reports into the night, each stamped with place and time: a polling place in Lansing at 4:15 p.m., voters in Holt, an in-depth look at Election Day from East Lansing at 7 p.m. and a candidate's watch party in Lansing at 10 p.m. Data graphics on turnout and local ballot questions carried the same identity.</p>
