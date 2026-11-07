@@ -43,6 +43,12 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 .ag-wkar-hero-collage-station{inset:auto 5% 1% auto;width:75%;height:42%;transform:rotate(-1deg);z-index:3}
 @media(max-width:1000px){.ag-wkar-systems-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.ag-wkar-systems-grid{grid-template-columns:1fr}.ag-wkar-hero-collage{height:310px}}
+.ag-wkar-mosaic{width:100%;margin:0;display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:clamp(210px,19vw,290px) auto;gap:10px}
+.ag-wkar-mosaic>div{position:relative;overflow:hidden;border:1px solid rgba(20,18,15,.14);background:#14120F}
+.ag-wkar-mosaic img{display:block;width:100%;height:100%;object-fit:cover}
+.ag-wkar-mosaic .ag-wkar-mosaic-band{grid-column:1/-1;aspect-ratio:1240/286}
+.ag-wkar-mosaic figcaption{grid-column:1/-1;margin-top:2px;font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;line-height:1.6;color:#7B7368}
+@media(max-width:700px){.ag-wkar-mosaic{grid-template-rows:180px auto;gap:8px}}
 </style>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1" name="robots"/>
 <meta content="Andrew Gillfillan, Andy Gillfillan, news director, editorial leader, newsroom leadership, audience strategy, public media, WKAR, Michigan State University, editorial products, newsletters, streaming news, digital audience growth" name="keywords"/>
@@ -118,11 +124,12 @@ a:focus-visible,button:focus-visible,[role=button]:focus-visible{outline:3px sol
 <p class="ag-wkar-case-intro" style="margin:18px 0 0; max-width:56ch; font-size:16px; line-height:1.62; color:#5D564D; text-wrap:pretty;">Four case studies in turning editorial strategy into products and operating models a team can sustain.</p>
 </div>
 <div class="ag-wkar-hero-card" style="flex:2 1 300px; min-width:0; display:flex; align-items:flex-end;">
-<div class="ag-wkar-hero-collage" aria-label="Current WKAR product work showing Election 2026 political headlines, voter tools and live results" role="img">
-<figure class="ag-wkar-hero-collage-team"><img alt="The Election 2026 political headlines section with bylines and listening times" decoding="async" loading="eager" src="assets/election/headlines.jpg" width="1500" height="860"/></figure>
-<figure class="ag-wkar-hero-collage-signal"><img alt="The Election 2026 voter resource center with registration, ballot and polling-place tools" decoding="async" loading="eager" src="assets/election-2026-live/voter-tools.png" width="2000" height="1006"/></figure>
-<figure class="ag-wkar-hero-collage-station"><img alt="Live WKAR Election 2026 primary results" decoding="async" loading="eager" src="assets/election-2026-live/results.png" width="2000" height="1019"/></figure>
-</div>
+<figure class="ag-wkar-mosaic">
+<div><img alt="A WKAR journalist interviewed on camera for an Election 2026 studio conversation, with the camera operator in the foreground" decoding="async" fetchpriority="high" src="assets/election-2026-live/election-studio-interview.jpeg" style="object-position:center 55%;" width="1800" height="1350"/></div>
+<div><img alt="A WKAR reporter filing an Election Day field report outside a Lansing polling place for the @wkarnews Instagram channel" decoding="async" src="assets/election-night/ig-polling-place.jpg" style="object-position:center 30%;" width="516" height="695"/></div>
+<div class="ag-wkar-mosaic-band"><img alt="The Election 2026 hero on wkar.org: Your team. Your vote. In depth., with four WKAR journalists" decoding="async" src="assets/election-night/hero-in-depth.jpg" width="1240" height="286"/></div>
+<figcaption>Election 2026 in the studio · @wkarnews on Election Day · the journalists as the front door</figcaption>
+</figure>
 </div>
 </div>
 </section>
